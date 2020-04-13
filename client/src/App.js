@@ -1,13 +1,15 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+class App extends React.Component {
 
-function App() {
-  return (
-    <div className="App">
+  render() {
+    return (
+      <div className="App">
 
-    </div>
-  );
+      </div>
+    );
+  }
 }
 
 export default App;
