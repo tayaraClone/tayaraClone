@@ -20,7 +20,7 @@ class App extends React.Component {
   }
 
   openAccount() {
-    this.setState({ opendAcc: true });
+    this.setState({ openedAcc: true });
   }
 
   componentWillMount() {

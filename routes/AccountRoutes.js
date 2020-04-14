@@ -14,7 +14,7 @@ module.exports = (app) => {
                 await newAccount.save();
                 res.send({
                     results: {
-                        request: 'handeled sign up request',
+                        response: 'handeled sign up request',
                         id: newAccount._id
                     }
                 });
@@ -23,7 +23,7 @@ module.exports = (app) => {
             } else {
                 res.status(202).send({
                     results: {
-                        request: 'your email is used already in an other account'
+                        response: 'your email is used already in an other account'
                     }
                 }).end()
             }
@@ -37,17 +37,24 @@ module.exports = (app) => {
             if (!acc) {
                 res.status(203).send({
                     results: {
-                        request: 'account is not found'
+                        response: 'account is not found'
                     }
                 }).end()
             } else {
-                var bytes = CryptoJS.AES.decrypt(password, '_____________password__________');
-                var originalPass = bytes.toString(CryptoJS.enc.Utf8);
+                var bytes = cryptoJS.AES.decrypt(password, '_____________password__________');
+                var originalPass = bytes.toString(cryptoJS.enc.Utf8);
                 if (originalPass === acc.password) {
                     res.send({
                         results: {
-                            request: 'handled sign up request',
+                            response: 'handled sign up request',
                             id: acc._id
+                        }
+                    }).end()
+                }
+                else {
+                    res.status(202).send({
+                        results: {
+                            response: 'that is not your password'
                         }
                     }).end()
                 }
