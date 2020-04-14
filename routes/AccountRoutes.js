@@ -9,23 +9,24 @@ module.exports = (app) => {
             if (account === null) {
                 let accData = req.body;
                 let cipherPass = cryptoJS.AES.encrypt(accData.password, '_____________password__________').toString();
+                // cipherPass is a crypted password
                 accData.password = cipherPass
-                let newAccount = new Accounts(accData);
-                await newAccount.save();
+                let newAccount = new Accounts(accData); // made new collection 
+                await newAccount.save(); // saved collection
                 res.send({
                     results: {
                         response: 'handeled sign up request',
                         id: newAccount._id
                     }
-                });
-                res.end();
+                }); // send response
+                res.end(); // end response
 
             } else {
                 res.status(202).send({
                     results: {
                         response: 'your email is used already in an other account'
                     }
-                }).end()
+                }).end() // send this response if the email already used
             }
         })
     })
@@ -39,24 +40,25 @@ module.exports = (app) => {
                     results: {
                         response: 'account is not found'
                     }
-                }).end()
+                }).end() // send response of account not found if there is no account with same request email
             } else {
                 var bytes = cryptoJS.AES.decrypt(password, '_____________password__________');
                 var originalPass = bytes.toString(cryptoJS.enc.Utf8);
+                // originalPass is a encrypted password form the database
                 if (originalPass === acc.password) {
                     res.send({
                         results: {
                             response: 'handled sign up request',
                             id: acc._id
                         }
-                    }).end()
+                    }).end() // send id if the passwords request and the password from the db is the same
                 }
                 else {
                     res.status(202).send({
                         results: {
-                            response: 'that is not your password'
+                            response: 'password is not validated'
                         }
-                    }).end()
+                    }).end() // send this response if the password is not validated
                 }
             }
         })

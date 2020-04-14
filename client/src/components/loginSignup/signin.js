@@ -10,14 +10,18 @@ class Signin extends Component {
         }
     }
     onchange(e) {
+        // onchange changes state while typing in the input
         this.setState({ [e.target.name]: e.target.value });
     }
 
     onclick(e) {
         e.preventDefault()
         let emailValidator = /@./;
+        // emailValidator validates email
         if (this.state.password < 9 || emailValidator.test(this.state.email)) {
+
             accServices.signIn(this.state, this.props.openAccount)
+
         }
     }
     render() {

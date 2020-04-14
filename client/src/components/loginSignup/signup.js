@@ -17,11 +17,13 @@ class Signup extends Component {
         this.onchange = this.onchange.bind(this);
     }
     onchange(e) {
+        // change state while typing in the input
         this.setState({ [e.target.name]: e.target.value });
     }
     onSubmit(e) {
         e.preventDefault();
         let emailValidator = /@./;
+        // emailValidator validates email
 
         if (this.state.firstname === "" ||
             this.state.lastname === "" ||
@@ -38,6 +40,7 @@ class Signup extends Component {
 
         else {
             let place = {}
+            // retrieve location
             var options = {
                 enableHighAccuracy: true,
                 timeout: 5000,
@@ -60,8 +63,9 @@ class Signup extends Component {
 
             navigator.geolocation.getCurrentPosition(success, error, options);
             this.setState(place)
+            // add date to save it in the db
             let newAcc = this.state;
-            newAcc.date = Date()
+            newAcc.createdAt = Date()
             accountServices.signUp(newAcc, this.props.openAccount)
         }
 
