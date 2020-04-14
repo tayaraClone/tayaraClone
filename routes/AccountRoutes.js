@@ -11,10 +11,7 @@ module.exports = (app) => {
                 let cipherPass = cryptoJS.AES.encrypt(accData.password, '_____________password__________').toString();
                 accData.password = cipherPass
                 let newAccount = new Accounts(accData);
-                await newAccount.save()
-                // Accounts.findOne({ email: req.body.email }, async (err, data) => {
-
-                // })
+                await newAccount.save();
                 res.send({
                     results: {
                         request: 'handeled sign up request',
@@ -24,7 +21,7 @@ module.exports = (app) => {
                 res.end();
 
             } else {
-                res.status(401).send({
+                res.status(202).send({
                     results: {
                         request: 'your email is used already in an other account'
                     }
@@ -38,7 +35,7 @@ module.exports = (app) => {
         Accounts.findOne({ email }, async (err, acc) => {
             if (err) throw err
             if (!acc) {
-                res.status(503).send({
+                res.status(203).send({
                     results: {
                         request: 'account is not found'
                     }
