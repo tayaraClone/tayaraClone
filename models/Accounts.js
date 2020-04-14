@@ -2,20 +2,51 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const accountSchema = new Schema({
-    firstname: String,
-    lastname: String,
-    email: {
+    firstname: {
         type: String,
         required: true
     },
-    password: String,
+    lastname: {
+        type: String,
+        required: true
+    },
+    email: {
+        type: String,
+        unique: true,
+        required: true
+    },
+    password: {
+        type: String,
+        required: true,
+        min: 7
+    },
     phonenumber: Number,
-    createdAt: Date,
-    updatedAt: Date,
-    latitude: Number,
-    longitude: Number,
-    heightAccuracy: Number,
-    verified: Boolean
+    createdAt: {
+        type: Date,
+        required: true,
+        default: Date.now
+    },
+    updatedAt: {
+        type: Date,
+        required: true,
+        default: null
+    },
+    latitude: {
+        type: Number,
+        default: null
+    },
+    longitude: {
+        type: Number,
+        default: null
+    },
+    heightAccuracy: {
+        type: Number,
+        default: null
+    },
+    verified: {
+        type: Boolean,
+        default: false
+    }
 })
 
 mongoose.model('Accounts', accountSchema)
