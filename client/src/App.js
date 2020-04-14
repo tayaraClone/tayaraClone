@@ -24,7 +24,7 @@ class App extends React.Component {
   }
 
   componentWillMount() {
-    if (localStorage.getItem('____id')) { this.setState({ openedAcc: true }) }
+    if (localStorage.getItem('___________id')) { this.setState({ openedAcc: true }) }
   }
 
   render() {
@@ -41,11 +41,14 @@ class App extends React.Component {
 
             </Route>
             <Route exact path="/myProducts">
-              {/* {this.state.openedAcc ? } */}
+              {this.state.openedAcc ? <div></div> : <Redirect to="/signin" />}
               <div> </div>
             </Route>
             <Route exact path="/">
               <Home />
+            </Route>
+            <Route path="*">
+              <h1>THIS PATH IS NOT FOUND !!</h1>
             </Route>
           </Switch>
 

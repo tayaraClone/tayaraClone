@@ -8,9 +8,9 @@ class Signup extends Component {
             lastname: '',
             email: '',
             password: '',
-            longitude: '',
-            latitude: "",
-            heightAccuracy: '',
+            longitude: null,
+            latitude: null,
+            heightAccuracy: null,
             phoneNumber: null,
             city: ''
         }
@@ -26,18 +26,43 @@ class Signup extends Component {
         if (this.state.firstname === "" ||
             this.state.lastname === "" ||
             !emailValidator.test(this.state.email) ||
-            this.state.password.length < 9||
+            this.state.password.length < 9 ||
             this.state.city === '') {
 
-                if (this.state.firstname === "") alert('first name input is empty')
-                else if (this.state.lastname === "") alert('last name input is empty')
-                else if (!emailValidator.test(this.state.email)) alert('your email might be wrong check it again');
-                else if (this.state.password.length < 9) alert('your word must be more than 9 letters long')
-                else if (this.state.city === "") alert('you must choose a city')
+            if (this.state.firstname === "") alert('first name input is empty')
+            else if (this.state.lastname === "") alert('last name input is empty')
+            else if (!emailValidator.test(this.state.email)) alert('your email might be wrong check it again');
+            else if (this.state.password.length < 9) alert('your word must be more than 9 letters long')
+            else if (this.state.city === "") alert('you must choose a city')
         }
 
         else {
-            accountServices.signUp(this.state)
+            let place = {}
+            var options = {
+                enableHighAccuracy: true,
+                timeout: 5000,
+                maximumAge: 0
+            };
+
+            function success(pos) {
+                var crd = pos.coords;
+                place = {
+                    latitude: crd.latitude,
+                    heightAccuracy: crd.accuracy,
+                    longitude: crd.longitude
+                }
+
+            }
+
+            function error(err) {
+                console.warn(`ERROR(${err.code}): ${err.message}`);
+            }
+
+            navigator.geolocation.getCurrentPosition(success, error, options);
+            this.setState(place)
+            let newAcc = this.state;
+            newAcc.date = Date()
+            accountServices.signUp(newAcc, this.props.openAccount)
         }
 
 

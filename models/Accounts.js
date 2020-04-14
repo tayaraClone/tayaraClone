@@ -28,7 +28,6 @@ const accountSchema = new Schema({
     },
     updatedAt: {
         type: Date,
-        required: true,
         default: null
     },
     latitude: {
