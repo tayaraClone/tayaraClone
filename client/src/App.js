@@ -3,7 +3,8 @@ import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from "react-router-dom";
 import Home from './components/home/home';
 import Signin from './components/loginSignup/signin';
@@ -15,10 +16,15 @@ class App extends React.Component {
     this.state = {
       openedAcc: false
     }
+    this.openAccount = this.openAccount.bind(this);
+  }
+
+  openAccount() {
+    this.setState({ opendAcc: true });
   }
 
   componentWillMount() {
-    if (localStorage.getItem('___id')) { this.setState({ openedAcc: true }) }
+    if (localStorage.getItem('____id')) { this.setState({ openedAcc: true }) }
   }
 
   render() {
@@ -28,10 +34,15 @@ class App extends React.Component {
         <div className="App">
           <Switch>
             <Route exact path="/signin">
-              <Signin />
+              {!this.state.openedAcc ? <Signin openAccount={this.openAccount} /> : <Redirect to="/myProducts" />}
             </Route>
             <Route exact path="/signup">
-              <Signup />
+              {!this.state.openedAcc ? <Signup openAccount={this.openAccount} /> : <Redirect to="/myProducts" />}
+
+            </Route>
+            <Route exact path="/myProducts">
+              {/* {this.state.openedAcc ? } */}
+              <div> </div>
             </Route>
             <Route exact path="/">
               <Home />

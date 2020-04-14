@@ -16,6 +16,11 @@ mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost:27017/tayaraClo
 
 app.use(bodyParser.json());
 
+require('./models/Accounts');
+require('./models/Products');
+
+require('./routes/AccountRoutes')(app);
+
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
 
