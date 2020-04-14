@@ -7,7 +7,7 @@ module.exports = (app) => {
         await newAccount.save()
         Accounts.findOne({ email: req.body.email }, async (err, data) => {
             if (err) throw err;
-            res.send({ results: data._id });
+            res.send({ results: data });
             res.end();
         })
     })
