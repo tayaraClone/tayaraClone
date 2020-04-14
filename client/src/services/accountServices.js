@@ -15,8 +15,8 @@ export default {
         axios.post('http://localhost:5000:signin', data)
             .then(res => {
                 let { id } = res.data.results;
-                localStorage.setItem('___________id', id)
-                openAcc()
+                localStorage.setItem('___________id', id);
+                openAcc();
             })
             .catch(err => console.log(err))
     }
