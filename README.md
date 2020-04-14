@@ -1,7 +1,7 @@
 # tayaraClone
 tayaraClone is a tayara.tn clone for m-amine-aouini green field project on RBK Tn
 
-# setup
+# setup for development
 
 to setup this appliation run this commands one by one 
 
