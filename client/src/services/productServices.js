@@ -8,11 +8,12 @@ export default {
             })
             .catch(err => console.log(err));
     },
-    sellerProds: async (id, retreive) => {
+    sellerProds: async (id, onRetreive) => {
         axios.get(`http://localhost:5000/sellerProds/${id}`)
             .then(res => {
-                let { results } = res.data
-                retreive(results);
+                console.log(res)
+                let { products } = res.data.results;
+                onRetreive(products);
             })
             .catch(err => console.log(err));
     }

@@ -20,12 +20,16 @@ module.exports = (app) => {
         }
     })
 
-    app.get('/sellerProds/:_id', async (req, res) => {
-        let { _id } = req.params
-        Products.find({ _id }, async (err, data) => {
+    app.get('/sellerProds/:account_id', async (req, res) => {
+        let { account_id } = req.params
+        Products.find({ account_id }, async (err, data) => {
             if (err) { return res.status(400).send(err).end() }
 
-            res.send({ results: data || [] }).end()
+            res.send({
+                results: {
+                    products: data || []
+                }
+            }).end()
         })
     })
 }
