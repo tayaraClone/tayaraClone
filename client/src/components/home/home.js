@@ -5,7 +5,7 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <Link to="/signin">Open Seller Account</Link>
+
             </div>
         )
     }
