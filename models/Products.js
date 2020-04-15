@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose
 const productSchema = new Schema({
-    _id: Schema.Types.ObjectId,
     account_id: {
         type: String,
         required: true

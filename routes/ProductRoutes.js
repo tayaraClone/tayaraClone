@@ -3,18 +3,19 @@ let Products = mongoose.model('Products');
 
 module.exports = (app) => {
     app.post('/makeProduct', async (req, res) => {
-        try {
-            let newProduct = new Products(req.body);
-            await newProduct.save()
-            res.send({
-                results: {
-                    response: 'handeled make product request',
-                    id: newProduct._id
-                }
-            }).end()
-        }
-        catch (err) {
-            res.send(err).end()
-        }
+        let newProdData = req.body;
+        delete newProdData.madeProd
+        console.log(newProdData)
+
+        let newProduct = new Products(newProdData);
+        await newProduct.save()
+        res.send({
+            results: {
+                response: 'handeled make product request',
+                id: newProduct._id
+            }
+        }).end()
+
+
     })
 }
