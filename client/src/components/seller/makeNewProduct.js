@@ -22,6 +22,10 @@ class MakeProduct extends Component {
         this.setState({ [e.target.name]: e.target.value });
     }
 
+    onMadeProduct() {
+        this.setState({ madeProd: true })
+    }
+
     on_click(e) {
         e.preventDefault();
         if (this.state.name === "" ||
@@ -47,6 +51,7 @@ class MakeProduct extends Component {
 
     render() {
         return (
+
             <div>
                 <form>
                     <label for="name">Name:</label>

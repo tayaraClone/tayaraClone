@@ -6,6 +6,10 @@ ul {
   list-style-type: none;
 }
 li{
-  float: left;
+  display: inline;
   margin-left: 10px;
+}
+
+li:hover {
+  background-color: aquamarine;
 }
