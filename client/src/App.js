@@ -26,6 +26,11 @@ class App extends React.Component {
     this.setState({ openedAcc: true });
   }
 
+  logOut() {
+    localStorage.removeItem('___________id')
+    this.setState({ openedAcc: false });
+  }
+
   componentWillMount() {
     if (localStorage.getItem('___________id')) { this.setState({ openedAcc: true }) }
   }
@@ -35,7 +40,7 @@ class App extends React.Component {
       <Router>
 
         <div className="App">
-          {this.state.openedAcc ? <OpenedAccNav /> : <NotOpenedAccNav />}
+          {this.state.openedAcc ? <OpenedAccNav logOut={this.logOut.bind(this)} /> : <NotOpenedAccNav />}
           <Switch>
             <Route exact path="/signin">
               {!this.state.openedAcc ? <Signin openAccount={this.openAccount} /> : <Redirect to="/myProducts" />}
