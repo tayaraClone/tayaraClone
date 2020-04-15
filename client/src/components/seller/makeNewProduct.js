@@ -61,7 +61,7 @@ class MakeProduct extends Component {
                     <input type="text" name="image" id="newProdImage" onChange={this.on_change}></input><br></br>
                     <label for="description">Description:</label>
                     <input name="description" type="text" onChange={this.on_change}></input><br></br>
-                    <label for="cost">Cost:</label>
+                    <label for="cost">Cost (in DT):</label>
                     <input name="cost" type="number" min="1" onChange={this.on_change}></input><br></br>
                     <label for="stockCondition">Stock Condition:</label>
                     <select name="stockCondition" onChange={this.on_change}>
@@ -75,7 +75,7 @@ class MakeProduct extends Component {
                         <option value="men's fashion">men's fashion</option>
                         <option value="women's fashion">women's fashion</option>
                         <option value="boy's fashion">boy's fashion</option>
-                        <option value="baby">baby</option>
+                        <option value="baby's essentials">baby's essentials</option>
                         <option value="art">art</option>
                         <option value="video games">video games</option>
                         <option value="other">other</option>
