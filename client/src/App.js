@@ -3,7 +3,8 @@ import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from "react-router-dom";
 import Home from './components/home/home';
 import Signin from './components/loginSignup/signin';
@@ -15,10 +16,15 @@ class App extends React.Component {
     this.state = {
       openedAcc: false
     }
+    this.openAccount = this.openAccount.bind(this);
+  }
+
+  openAccount() {
+    this.setState({ openedAcc: true });
   }
 
   componentWillMount() {
-    if (localStorage.getItem('___id')) { this.setState({ openedAcc: true }) }
+    if (localStorage.getItem('___________id')) { this.setState({ openedAcc: true }) }
   }
 
   render() {
@@ -28,13 +34,21 @@ class App extends React.Component {
         <div className="App">
           <Switch>
             <Route exact path="/signin">
-              <Signin />
+              {!this.state.openedAcc ? <Signin openAccount={this.openAccount} /> : <Redirect to="/myProducts" />}
             </Route>
             <Route exact path="/signup">
-              <Signup />
+              {!this.state.openedAcc ? <Signup openAccount={this.openAccount} /> : <Redirect to="/myProducts" />}
+
+            </Route>
+            <Route exact path="/myProducts">
+              {this.state.openedAcc ? <div></div> : <Redirect to="/signin" />}
+              <div> </div>
             </Route>
             <Route exact path="/">
               <Home />
+            </Route>
+            <Route path="*">
+              <h1>THIS PATH IS NOT FOUND !!</h1>
             </Route>
           </Switch>
 

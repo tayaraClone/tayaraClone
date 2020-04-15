@@ -3,7 +3,7 @@ tayaraClone is a tayara.tn clone for m-amine-aouini green field project on RBK T
 
 # setup for development
 
-to setup this appliation run this commands one by one 
+to setup this appliation run this commands one by one (make shure your in the root directory)
 
 0. npm install
 

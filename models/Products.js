@@ -1,16 +1,43 @@
-const mongoose, { Schema } = require('mongoose');
-
+const mongoose = require('mongoose');
+const { Schema } = mongoose
 const productSchema = new Schema({
-    account_id: String,
-    name: String,
-    description: String,
-    stockCondition: String,
-    withDelivery: String,
-    categorie: String,
-    delivery: String,
-    productPlace: String,
-    createAt: String,
-    updatedAt: String
+    _id: Schema.Types.ObjectId,
+    account_id: {
+        type: String,
+        required: true
+    },
+    name: {
+        type: String,
+        required: true
+    },
+    description: {
+        type: String,
+        default: null
+    },
+    stockCondition: {
+        type: String,
+        default: null
+    },
+    categorie: {
+        type: String,
+        required: true
+    },
+    deliveryCondition: {
+        type: String,
+        required: true
+    },
+    productPlace: {
+        type: String,
+        required: null
+    },
+    createAt: {
+        type: Date,
+        default: Date.now
+    },
+    updatedAt: {
+        type: Date,
+        default: null
+    }
 
 })
 
