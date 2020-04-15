@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-
+import productServices from './../../services/productServices'
 class MakeProduct extends Component {
     constructor(props) {
         super(props);
         this.state = {
             account_id: localStorage.getItem('___________id'),
             name: '',
+            image: "",
             description: '',
             cost: null,
             stockCondition: '',
@@ -44,7 +45,7 @@ class MakeProduct extends Component {
             else if (this.state.productPlace === "") alert('you have write the product place')
 
         } else {
-
+            productServices.makeProduct(this.state, this.onMadeProduct.bind(this))
         }
 
     }
@@ -56,6 +57,8 @@ class MakeProduct extends Component {
                 <form>
                     <label for="name">Name:</label>
                     <input name="name" type="text" id="newProdId" onChange={this.on_change}></input><br></br>
+                    <label for="image">Image url:</label>
+                    <input type="text" name="image" id="newProdImage" onChange={this.on_change}></input><br></br>
                     <label for="description">Description:</label>
                     <input name="description" type="text" onChange={this.on_change}></input><br></br>
                     <label for="cost">Cost:</label>
