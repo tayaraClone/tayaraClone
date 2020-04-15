@@ -6,7 +6,7 @@ class OpenedAccNav extends Component {
     }
     render() {
         return (
-            <nav>
+            <nav class="nav">
                 <ul>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="myProducts">My Products</Link></li>
