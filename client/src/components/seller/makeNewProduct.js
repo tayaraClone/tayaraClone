@@ -51,7 +51,7 @@ class MakeProduct extends Component {
     }
 
     render() {
-        return (
+        return !this.state.madeProd ? (
 
             <div>
                 <form>
@@ -91,7 +91,7 @@ class MakeProduct extends Component {
                     <button onClick={this.on_click.bind(this)}>Make Product</button>
                 </form>
             </div>
-        )
+        ) : (<Redirect to="/myProducts" />)
     }
 }
 export default MakeProduct;
