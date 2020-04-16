@@ -19,5 +19,13 @@ export default {
                 onRetreive(products);
             })
             .catch(err => console.log(err));
+    },
+    allProds: async (onRetreive) => {
+        axios.get('http://localhost:5000/allProds')
+            .then(res => {
+                let { products } = res.data.results;
+                onRetreive(products);
+            })
+            .catch(err => console.log(err));
     }
 }
