@@ -24,7 +24,7 @@ export default {
             .catch(err => console.log(err));
     },
     allProds: async (onRetreive) => {
-        axios.get('http://localhost:5000/allProds' + localStorage.getItem('_______________JWT_Token'), { headers: { 'auth-token': localStorage.getItem('_______________JWT_Token') } })
+        axios.get('http://localhost:5000/allProds', { headers: { 'auth-token': localStorage.getItem('_______________JWT_Token') } })
             .then(res => {
                 let { products } = res.data.results;
                 onRetreive(products);

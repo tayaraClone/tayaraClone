@@ -33,4 +33,19 @@ module.exports = (app) => {
             }).end()
         })
     })
+
+    app.get('/allProds', verify, async (req, res) => {
+        try {
+            let products = Products.find();
+            res.send({
+                results: {
+                    response: 'Handeled request to retreive all products',
+                    products: products || []
+                }
+            }).end()
+
+        } catch (err) {
+            res.status(401).send(err).end();
+        }
+    })
 }
