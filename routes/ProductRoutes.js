@@ -34,13 +34,13 @@ module.exports = (app) => {
         })
     })
 
-    app.get('/allProds', verify, async (req, res) => {
+    app.get('/allProds', async (req, res) => {
         try {
-            let products = Products.find();
+            let products = Products.find() || [];
             res.send({
                 results: {
                     response: 'Handeled request to retreive all products',
-                    products: products || []
+                    products: products
                 }
             }).end()
 
