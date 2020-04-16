@@ -30,3 +30,19 @@ li:hover {
 .sellerProdImg {
   width: 200px
 }
+
+#homeProducts {
+  display: grid;
+  grid-template-columns: 210px 210px 210px 210px;
+  grid-gap: 15px;
+  margin-left: 246px;
+}
+
+.allProds {
+  background-color: whitesmoke;
+}
+
+.allProdsImgs {
+  width: 200px;
+  height: 200px;
+}
