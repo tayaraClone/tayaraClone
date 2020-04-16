@@ -20,29 +20,36 @@ class MakeProduct extends Component {
     }
 
     on_change(e) {
+        // on_change change states values by name
         this.setState({ [e.target.name]: e.target.value });
     }
 
     onMadeProduct() {
+        // onMadeProduct set madeProd to true so it can redirect the page to myProducts page
         this.setState({ madeProd: true })
     }
 
     on_click(e) {
         e.preventDefault();
+        let urlValidator = /[http][https]:\/\//
+
         if (this.state.name === "" ||
             this.state.description === "" ||
             this.state.cost === null ||
+            !urlValidator.test(this.state.image) ||
             this.state.stockCondition === "" ||
             this.state.categorie === "" ||
             this.state.deliveryCondition === "" ||
             this.state.productPlace === "") {
             if (this.state.name === "") alert('the name input is empty')
+            else if (!urlValidator.test(this.state.image)) alert('that is not a url in your image input')
             else if (this.state.description === "") alert('description is empty')
             else if (this.state.cost === null) alert('you have to write how much your product is for')
             else if (this.state.stockCondition === "") alert('you didn\' choose a stock condition')
             else if (this.state.categorie === "") alert('you didn\'t choose a categorie')
             else if (this.state.deliveryCondition === '') alert('you have to choose delivery condition')
             else if (this.state.productPlace === "") alert('you have write the product place')
+
 
         } else {
             productServices.makeProduct(this.state, this.onMadeProduct.bind(this))
