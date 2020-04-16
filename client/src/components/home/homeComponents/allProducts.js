@@ -42,48 +42,48 @@ class AllProds extends Component {
                 {this.state.mensFashion ? this.state["men's fashion"].map((product, i) => (
                     <div key={i} id={product._id} className="allProds" onClick={this.onclick.bind(this)}>
                         <img src={product.image} className="allProdsImgs" alt="product image" ></img>
-                        <p>{product.stockCondition}</p>
+                        <p>Stock: {product.stockCondition} | Delivery: {product.deliveryCondition}</p>
                         <h4>{product.name}</h4>
                     </div>)) : <div></div>}
                 {this.state.womensFashion ? this.state["women's fashion"].map((product, i) => (
                     <div key={i} id={product._id} className="allProds" onClick={this.onclick.bind(this)}>
                         <img src={product.image} className="allProdsImgs" alt="product image" ></img>
-                        <p>{product.stockCondition}</p>
+                        <p>Stock: {product.stockCondition} | Delivery: {product.deliveryCondition}</p>
                         <h4>{product.name}</h4>
                     </div>
                 )) : <div></div>}
                 {this.state.boysFashion ? this.state["boy's fashion"].map((product, i) => (
                     <div key={i} id={product._id} className="allProds" onClick={this.onclick.bind(this)}>
                         <img src={product.image} className="allProdsImgs" alt="product image" ></img>
-                        <p>{product.stockCondition}</p>
+                        <p>Stock: {product.stockCondition} | Delivery: {product.deliveryCondition}</p>
                         <h4>{product.name}</h4>
                     </div>
                 )) : <div></div>}
                 {this.state.babysEssential ? this.state["baby's essentials"].map((product, i) => (
                     <div key={i} id={product._id} className="allProds" onClick={this.onclick.bind(this)}>
                         <img src={product.image} className="allProdsImgs" alt="product image" ></img>
-                        <p>{product.stockCondition}</p>
+                        <p>Stock: {product.stockCondition} | Delivery: {product.deliveryCondition}</p>
                         <h4>{product.name}</h4>
                     </div>
                 )) : <div></div>}
                 {this.state.videoGames ? this.state["video games"].map((product, i) => (
                     <div key={i} id={product._id} className="allProds" onClick={this.onclick.bind(this)}>
                         <img src={product.image} className="allProdsImgs" alt="product image" ></img>
-                        <p>{product.stockCondition}</p>
+                        <p>Stock: {product.stockCondition} | Delivery: {product.deliveryCondition}</p>
                         <h4>{product.name}</h4>
                     </div>
                 )) : <div></div>}
                 {this.state.art ? this.state["Art"].map((product, i) => (
                     <div key={i} id={product._id} className="allProds" onClick={this.onclick.bind(this)}>
                         <img src={product.image} className="allProdsImgs" alt="product image" ></img>
-                        <p>{product.stockCondition}</p>
+                        <p>Stock: {product.stockCondition} | Delivery: {product.deliveryCondition}</p>
                         <h4>{product.name}</h4>
                     </div>
                 )) : <div></div>}
                 {this.state.other ? this.state["Other"].map((product, i) => (
                     <div key={i} id={product._id} className="allProds" onClick={this.onclick.bind(this)}>
                         <img src={product.image} className="allProdsImgs" alt="product image" ></img>
-                        <p>{product.stockCondition}</p>
+                        <p>Stock: {product.stockCondition} | Delivery: {product.deliveryCondition}</p>
 
                         <h4>{product.name}</h4>
                     </div>
