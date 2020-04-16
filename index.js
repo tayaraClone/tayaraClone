@@ -22,6 +22,7 @@ require('./models/Accounts');
 require('./models/Products');
 
 require('./routes/AccountRoutes')(app);
+require('./routes/ProductRoutes')(app);
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));

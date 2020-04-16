@@ -9,6 +9,10 @@ import {
 import Home from './components/home/home';
 import Signin from './components/loginSignup/signin';
 import Signup from './components/loginSignup/signup';
+import MyProducts from './components/seller/myProducts';
+import OpenedAccNav from './components/navbar/openedAccNav';
+import NotOpenedAccNav from './components/navbar/notOpenedAcc';
+import MakeProduct from './components/seller/makeNewProduct';
 
 class App extends React.Component {
   constructor(props) {
@@ -23,6 +27,11 @@ class App extends React.Component {
     this.setState({ openedAcc: true });
   }
 
+  logOut() {
+    localStorage.removeItem('___________id')
+    this.setState({ openedAcc: false });
+  }
+
   componentWillMount() {
     if (localStorage.getItem('___________id')) { this.setState({ openedAcc: true }) }
   }
@@ -32,6 +41,8 @@ class App extends React.Component {
       <Router>
 
         <div className="App">
+          {this.state.openedAcc ? <OpenedAccNav logOut={this.logOut.bind(this)} /> : <NotOpenedAccNav />}
+
           <Switch>
             <Route exact path="/signin">
               {!this.state.openedAcc ? <Signin openAccount={this.openAccount} /> : <Redirect to="/myProducts" />}
@@ -41,8 +52,11 @@ class App extends React.Component {
 
             </Route>
             <Route exact path="/myProducts">
-              {this.state.openedAcc ? <div></div> : <Redirect to="/signin" />}
-              <div> </div>
+              {this.state.openedAcc ? <MyProducts /> : <Redirect to="/signin" />}
+
+            </Route>
+            <Route exact path="/makeProduct">
+              <MakeProduct />
             </Route>
             <Route exact path="/">
               <Home />
