@@ -19,7 +19,6 @@ module.exports = (app) => {
                 res.send({
                     results: {
                         response: 'handeled sign up request',
-                        id: newAccount._id,
                         token
                     }
                 }); // send response
@@ -55,7 +54,6 @@ module.exports = (app) => {
                     res.send({
                         results: {
                             response: 'handled sign up request',
-                            id: acc._id,
                             token
                         }
                     }).end() // send id if the passwords request and the password from the db is the same 

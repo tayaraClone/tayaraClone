@@ -5,7 +5,6 @@ class MakeProduct extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            account_id: localStorage.getItem('___________id'),
             name: '',
             image: "",
             description: '',

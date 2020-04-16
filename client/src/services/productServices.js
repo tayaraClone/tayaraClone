@@ -3,9 +3,8 @@ let axios = require('axios');
 export default {
     makeProduct: async (data, onMake) => {
         // makeProduct sends data to the route so it can save it the db
-        axios.post('http://localhost:5000/makeProduct', {
-            headers: { 'auth-token': localStorage.getItem('_______________JWT_Token') },
-            body: data
+        axios.post('http://localhost:5000/makeProduct', data, {
+            headers: { 'auth-token': localStorage.getItem('_______________JWT_Token') }
         })
             .then(res => {
                 onMake()

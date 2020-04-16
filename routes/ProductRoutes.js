@@ -1,19 +1,22 @@
 let mongoose = require('mongoose');
 let Products = mongoose.model('Products');
 let verify = require('./verifyToken')
+let jwt = require('jsonwebtoken')
 
 module.exports = (app) => {
     app.post('/makeProduct', verify, async (req, res) => {
-        let newProdData = req.body;
-        delete newProdData.madeProd
 
         try {
+            let token = req.header('auth-token');
+            let verified = jwt.verify(token, process.env.TOKEN_SECRET);
+            let newProdData = req.body;
+            newProdData.account_id = verified._id;
+            delete newProdData.madeProd
             let newProduct = new Products(newProdData);
             await newProduct.save()
             res.send({
                 results: {
-                    response: 'handeled make product request',
-                    id: newProduct._id
+                    response: 'handeled make product request'
                 }
             }).end()
         } catch (err) {
