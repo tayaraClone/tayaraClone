@@ -1,8 +1,9 @@
 let mongoose = require('mongoose');
 let Products = mongoose.model('Products');
+let verify = require('./verifyToken')
 
 module.exports = (app) => {
-    app.post('/makeProduct', async (req, res) => {
+    app.post('/makeProduct', verify, async (req, res) => {
         let newProdData = req.body;
         delete newProdData.madeProd
 
@@ -20,7 +21,7 @@ module.exports = (app) => {
         }
     })
 
-    app.get('/sellerProds/:account_id', async (req, res) => {
+    app.get('/sellerProds/:account_id', verify, async (req, res) => {
         let { account_id } = req.params
         Products.find({ account_id }, async (err, data) => {
             if (err) { return res.status(400).send(err).end() }
