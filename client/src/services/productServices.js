@@ -25,8 +25,15 @@ export default {
     allProds: async (onRetreive) => {
         axios.get('http://localhost:5000/allProds')
             .then(res => {
+                let data = {}
                 let { products } = res.data.results;
-                onRetreive(products);
+                for (let i = 0; i < products.length; i++) {
+                    let product = products[i];
+                    if (!data[product.categorie]) { data[product.categorie] = [product] }
+                    else { data[product.categorie].push(product) };
+                }
+
+                onRetreive(data);
             })
             .catch(err => console.log(err));
     }
