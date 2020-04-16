@@ -18,6 +18,7 @@ export default {
         // openAcc parameter is a function to the change the state in the app when you invoke it
         axios.post('http://localhost:5000/signin', data)
             .then(res => {
+
                 let { token } = res.data.results;
                 localStorage.setItem('_______________JWT_Token', token)
                 openAcc();

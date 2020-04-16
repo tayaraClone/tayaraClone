@@ -56,7 +56,7 @@ class App extends React.Component {
 
             </Route>
             <Route exact path="/makeProduct">
-              <MakeProduct />
+              {this.state.openedAcc ? <MakeProduct /> : <Redirect to="/" />}
             </Route>
             <Route exact path="/">
               <Home />
