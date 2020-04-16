@@ -28,12 +28,12 @@ class App extends React.Component {
   }
 
   logOut() {
-    localStorage.removeItem('___________id')
+    localStorage.removeItem('_______________JWT_Token')
     this.setState({ openedAcc: false });
   }
 
   componentWillMount() {
-    if (localStorage.getItem('___________id')) { this.setState({ openedAcc: true }) }
+    if (localStorage.getItem('_______________JWT_Token')) { this.setState({ openedAcc: true }) }
   }
 
   render() {
@@ -56,7 +56,7 @@ class App extends React.Component {
 
             </Route>
             <Route exact path="/makeProduct">
-              <MakeProduct />
+              {this.state.openedAcc ? <MakeProduct /> : <Redirect to="/" />}
             </Route>
             <Route exact path="/">
               <Home />
