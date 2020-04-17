@@ -46,13 +46,13 @@ class AllProds extends Component {
             <div id="allProducts">
                 <div>
                     <ChooseCategorie onRemoveCategorie={this.removeCategory.bind(this)} />
-                    <Price />
+                    <Price onBudget={this.makeBudget.bind(this)} />
                 </div>
 
                 <div id="homeProducts">
                     {
                         this.state.allProds.map((product, i) => {
-                            if (this.state[product.categorie]) {
+                            if (this.state[product.categorie] && product.cost > this.state.min && product.cost < this.state.max) {
                                 return (
                                     <div key={i} id={product._id} className="allProds" onClick={this.onclick.bind(this)}>
                                         <img src={product.image} className="allProdsImgs" alt="product image" ></img>
