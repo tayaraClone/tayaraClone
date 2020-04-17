@@ -56,6 +56,17 @@ li:hover {
   margin-left: 70px;
 }
 
+#budgetInputs{
+  margin-top: 15px;
+  margin-left: 40px;
+  display: flex;
+
+}
+
+.budget{
+  width: 100px;
+}
+
 #homeProducts {
   display: grid;
   grid-template-columns: 210px 210px 210px 210px;
