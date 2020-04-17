@@ -33,7 +33,8 @@ export default {
     finishedStock: async (id) => {
         axios.put(`http://localhost:5000/finishedStock/${id}`, {
             stockCondition: "finished"
-        })
+        },
+            { headers: { 'auth-token': localStorage.getItem('_______________JWT_Token') } })
             .then(res => {
                 console.log(res)
             })

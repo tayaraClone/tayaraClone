@@ -52,4 +52,19 @@ module.exports = (app) => {
             res.status(401).send(err).end();
         }
     })
+
+    app.put('/finishedStock/:_id', verify, async (req, res) => {
+        let { _id } = req.params;
+        let { stockCondition } = req.body
+        Products.findByIdAndUpdate({ _id }, { stockCondition }, async (err, result) => {
+
+            if (err) {
+                res.send(err)
+            }
+            else {
+                res.send(result)
+            }
+
+        })
+    })
 }
