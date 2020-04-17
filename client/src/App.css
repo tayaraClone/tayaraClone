@@ -45,11 +45,22 @@ li:hover {
 
 }
 
+#allProducts {
+  display: grid;
+  grid-template-columns: 22% 78%;
+}
+
+#chooseCat {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  margin-left: 70px;
+}
+
 #homeProducts {
   display: grid;
   grid-template-columns: 210px 210px 210px 210px;
   grid-gap: 15px;
-  margin-left: 246px;
+  margin-left: 50px;
 }
 
 .allProds {
