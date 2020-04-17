@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import productsServices from './../../services/productServices';
 import productServices from './../../services/productServices';
 
 class MyProducts extends Component {
@@ -10,10 +9,17 @@ class MyProducts extends Component {
         }
     }
     onRetreive(data) {
+        // onRetereive takes data as a parameter and set myProds state to the data value
         this.setState({ myProds: data });
+
     }
     componentWillMount() {
-        productServices.sellerProds(localStorage.getItem('___________id'), this.onRetreive.bind(this));
+        // componentWillMount invoke sellerProds from productServices file and takes onReteive as a parameter
+        productServices.sellerProds(this.onRetreive.bind(this));
+    }
+    finishedStock(e) {
+        // finishedStock invoke finishedStock from productServices file and takes the targets name (product id) as a parameter 
+        productServices.finishedStock(e.target.name)
     }
 
 
@@ -24,6 +30,8 @@ class MyProducts extends Component {
                     this.state.myProds.map((product, i) => (
                         <div className="sellerProd" key={i}>
                             <img className="sellerProdImg" src={product.image} alt="product image"></img>
+                            <p className="stockCondition">Stock: {product.stockCondition} </p>
+                            <button id="finishedStock" name={product._id} onClick={this.finishedStock.bind(this)}>Finished Stock</button>
                             <h4>{product.name}</h4>
                         </div>
                     ))

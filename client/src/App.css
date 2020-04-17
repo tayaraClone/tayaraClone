@@ -24,11 +24,25 @@ li:hover {
 .sellerProd {
   width: 210px;
   background-color: white;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;  
+  -moz-box-shadow:    3px 3px 5px 6px #ccc;  
+  box-shadow:         3px 3px 5px 6px #ccc;
+}
 
+.stockCondition{
+  margin-right: 70px;
 }
 
 .sellerProdImg {
-  width: 200px
+  width: 200px;
+  height: 200px;
+}
+
+#finishedStock{
+  border: none;
+  background-color: #f44336;
+  color: white;
+
 }
 
 #homeProducts {
@@ -40,6 +54,9 @@ li:hover {
 
 .allProds {
   background-color: whitesmoke;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;  
+  -moz-box-shadow:    3px 3px 5px 6px #ccc;  
+  box-shadow:         3px 3px 5px 6px #ccc;
 }
 
 .allProdsImgs {

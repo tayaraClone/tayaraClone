@@ -12,9 +12,9 @@ export default {
             })
             .catch(err => console.log(err));
     },
-    sellerProds: async (id, onRetreive) => {
+    sellerProds: async (onRetreive) => {
         // sellerProds is a function to retrieve a sepecific seller with the the id
-        axios.get(`http://localhost:5000/sellerProds/${id}`, { headers: { 'auth-token': localStorage.getItem('_______________JWT_Token') } })
+        axios.get(`http://localhost:5000/sellerProds`, { headers: { 'auth-token': localStorage.getItem('_______________JWT_Token') } })
             .then(res => {
 
                 let { products } = res.data.results;
@@ -23,18 +23,24 @@ export default {
             .catch(err => console.log(err));
     },
     allProds: async (onRetreive) => {
+        // allProds takes onRetreive as a parameter and retreive all products data gives it to onRetreive as a parameter
         axios.get('http://localhost:5000/allProds')
             .then(res => {
-                let data = {}
                 let { products } = res.data.results;
-                for (let i = 0; i < products.length; i++) {
-                    let product = products[i];
-                    if (!data[product.categorie]) { data[product.categorie] = [product] }
-                    else { data[product.categorie].push(product) };
-                }
-
-                onRetreive(data);
+                onRetreive(products);
             })
             .catch(err => console.log(err));
+    },
+    finishedStock: async (id) => {
+        // finishedStock takes id as a parameter and make a put request to update the product by it's id
+        axios.put(`http://localhost:5000/finishedStock/${id}`, {
+            stockCondition: "finished"
+        },
+            { headers: { 'auth-token': localStorage.getItem('_______________JWT_Token') } })
+            .then(res => {
+                console.log(res)
+            })
+            .catch(err => console.log(err))
     }
+
 }
