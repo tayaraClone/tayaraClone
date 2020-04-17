@@ -12,9 +12,9 @@ export default {
             })
             .catch(err => console.log(err));
     },
-    sellerProds: async (id, onRetreive) => {
+    sellerProds: async (onRetreive) => {
         // sellerProds is a function to retrieve a sepecific seller with the the id
-        axios.get(`http://localhost:5000/sellerProds/${id}`, { headers: { 'auth-token': localStorage.getItem('_______________JWT_Token') } })
+        axios.get(`http://localhost:5000/sellerProds`, { headers: { 'auth-token': localStorage.getItem('_______________JWT_Token') } })
             .then(res => {
 
                 let { products } = res.data.results;
@@ -26,15 +26,18 @@ export default {
         axios.get('http://localhost:5000/allProds')
             .then(res => {
                 let { products } = res.data.results;
-                let data = { allProds: products }
-                // for (let i = 0; i < products.length; i++) {
-                //     let product = products[i];
-                //     if (!data[product.categorie]) { data[product.categorie] = [product] }
-                //     else { data[product.categorie].push(product) };
-                // }
-
-                onRetreive(data);
+                onRetreive(products);
             })
             .catch(err => console.log(err));
+    },
+    finishedStock: async (id) => {
+        axios.put(`http://localhost:5000/finishedStock/${id}`, {
+            stockCondition: "finished"
+        })
+            .then(res => {
+                console.log(res)
+            })
+            .catch(err => console.log(err))
     }
+
 }

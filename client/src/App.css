@@ -29,9 +29,20 @@ li:hover {
   box-shadow:         3px 3px 5px 6px #ccc;
 }
 
+.stockCondition{
+  margin-right: 70px;
+}
+
 .sellerProdImg {
   width: 200px;
   height: 200px;
+}
+
+#finishedStock{
+  border: none;
+  background-color: #f44336;
+  color: white;
+
 }
 
 #homeProducts {

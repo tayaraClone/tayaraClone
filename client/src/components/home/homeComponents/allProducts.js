@@ -5,13 +5,7 @@ class AllProds extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            mensFashion: true,
-            womensFashion: true,
-            boysFashion: true,
-            videoGames: true,
-            babysEssential: true,
-            art: true,
-            other: true,
+
             "men's fashion": true,
             "women's fashion": true,
             "boy's fashion": true,
@@ -26,7 +20,7 @@ class AllProds extends Component {
 
     onRetrieve(data) {
         console.log(data);
-        this.setState(data);
+        this.setState({ allProds: data });
     }
 
     componentWillMount() {

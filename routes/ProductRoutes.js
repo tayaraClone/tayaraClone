@@ -24,9 +24,10 @@ module.exports = (app) => {
         }
     })
 
-    app.get('/sellerProds/:account_id', verify, async (req, res) => {
-        let { account_id } = req.params
-        Products.find({ account_id }, async (err, data) => {
+    app.get('/sellerProds', verify, async (req, res) => {
+        let token = req.header('auth-token');
+        let account = jwt.verify(token, process.env.TOKEN_SECRET);
+        Products.find({ account_id: account._id }, async (err, data) => {
             if (err) { return res.status(400).send(err).end() }
 
             res.send({

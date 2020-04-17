@@ -13,7 +13,7 @@ class MyProducts extends Component {
         this.setState({ myProds: data });
     }
     componentWillMount() {
-        productServices.sellerProds(localStorage.getItem('___________id'), this.onRetreive.bind(this));
+        productServices.sellerProds(this.onRetreive.bind(this));
     }
 
 
@@ -24,6 +24,8 @@ class MyProducts extends Component {
                     this.state.myProds.map((product, i) => (
                         <div className="sellerProd" key={i}>
                             <img className="sellerProdImg" src={product.image} alt="product image"></img>
+                            <p className="stockCondition">Stock: {product.stockCondition} </p>
+                            <button id="finishedStock">Finished Stock</button>
                             <h4>{product.name}</h4>
                         </div>
                     ))
