@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import productsServices from './../../services/productServices';
 import productServices from './../../services/productServices';
 
 class MyProducts extends Component {
@@ -15,6 +14,9 @@ class MyProducts extends Component {
     componentWillMount() {
         productServices.sellerProds(this.onRetreive.bind(this));
     }
+    finishedStock(e) {
+        productServices.finishedStock(e.target.name)
+    }
 
 
     render() {
@@ -25,7 +27,7 @@ class MyProducts extends Component {
                         <div className="sellerProd" key={i}>
                             <img className="sellerProdImg" src={product.image} alt="product image"></img>
                             <p className="stockCondition">Stock: {product.stockCondition} </p>
-                            <button id="finishedStock">Finished Stock</button>
+                            <button id="finishedStock" name={product._id}>Finished Stock</button>
                             <h4>{product.name}</h4>
                         </div>
                     ))
