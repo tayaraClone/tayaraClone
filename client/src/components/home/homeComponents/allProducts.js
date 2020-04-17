@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import productsServices from './../../../services/productServices'
 import ChooseCategorie from './chooseByCategories';
+import Price from './price'
 
 class AllProds extends Component {
     constructor(props) {
@@ -39,7 +40,10 @@ class AllProds extends Component {
     render() {
         return (
             <div id="allProducts">
-                <ChooseCategorie onRemoveCategorie={this.removeCategory.bind(this)} />
+                <div>
+                    <ChooseCategorie onRemoveCategorie={this.removeCategory.bind(this)} />
+                    <Price />
+                </div>
 
                 <div id="homeProducts">
                     {
