@@ -23,6 +23,7 @@ export default {
             .catch(err => console.log(err));
     },
     allProds: async (onRetreive) => {
+        // allProds takes onRetreive as a parameter and retreive all products data gives it to onRetreive as a parameter
         axios.get('http://localhost:5000/allProds')
             .then(res => {
                 let { products } = res.data.results;
@@ -31,6 +32,7 @@ export default {
             .catch(err => console.log(err));
     },
     finishedStock: async (id) => {
+        // finishedStock takes id as a parameter and make a put request to update the product by it's id
         axios.put(`http://localhost:5000/finishedStock/${id}`, {
             stockCondition: "finished"
         },
