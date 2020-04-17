@@ -21,12 +21,12 @@ class AllProds extends Component {
     }
 
     onRetrieve(data) {
-        console.log(data);
-        this.setState({ allProds: data });
+
+        this.setState({ allProds: data }); // set allProds state to the data value
     }
 
     removeCategory(name) {
-        this.setState({ [name]: !this.state[name] });
+        this.setState({ [name]: !this.state[name] }); // set state with the name value to true or false
     }
 
     componentWillMount() {
@@ -35,6 +35,10 @@ class AllProds extends Component {
 
     onclick(e) {
         e.preventDefault()
+    }
+
+    makeBudget(name, price) {
+        this.setState({ [name]: price }) // set state with name value to price value
     }
 
     render() {
