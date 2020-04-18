@@ -11,12 +11,12 @@ class ByName extends Component {
     }
 
     onRetreive(data) {
-        this.setState({ products: data })
+        this.setState({ products: data }) // set state products to data parameter
     }
 
     componentWillMount() {
-        let name = sessionStorage.getItem('-----------________search')
-        productsServices.byNameProducts(name, this.onRetreive.bind(this))
+        let name = sessionStorage.getItem('-----------________search') // set name variable to products user searching for
+        productsServices.byNameProducts(name, this.onRetreive.bind(this)) // make http request to retreive data
     }
 
     onclick(e) {

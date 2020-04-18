@@ -78,9 +78,17 @@ module.exports = (app) => {
         let { name } = req.params;
 
         try {
-            let products = await Products.find({ name }) || [];
+            let splitName = name.split(' '); // split name to array of key word portions
+            let products = await Products.find({ name }) || []; // retreive all data with the name that we took it form request params
 
-            res.send({
+            for (let i = 0; i < splitName.length; i++) {
+                const namePortion = splitName[i];
+                products = products.concat(await Products.find({ name: namePortion }) || []) // retreive data with every word in the name value
+
+            }
+
+
+            res.send({  // send successful response
                 results: {
                     response: 'handeled response retreive all products by name',
                     products
@@ -88,7 +96,7 @@ module.exports = (app) => {
             }).end()
         }
         catch (err) {
-            res.status(400).send(err).end();
+            res.status(400).send(err).end(); // send error if there is a problem
         }
     })
 }
