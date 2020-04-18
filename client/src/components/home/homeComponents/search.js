@@ -17,19 +17,19 @@ class Search extends Component {
         e.preventDefault()
         if (this.state.search.length === 0) alert("Search bar is empty")
         else {
-            sessionStorage.setItem('-----------________search')
+            sessionStorage.setItem('-----------________search', this.state.search)
             this.setState({ madeSearch: true });
         }
     }
     render() {
-        return (
+        return !this.state.madeSearch ? (
             <div>
                 <form>
                     <input type="text" name="search" onChange={this.on_change}></input>
                     <button onClick={this.on_click}></button>
                 </form>
             </div>
-        )
+        ) : <Redirect to="search" />
     }
 }
 
