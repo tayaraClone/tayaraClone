@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import AllProds from './homeComponents/allProducts';
-import Search from './homeComponents/search'
+import Search from './../searchBar/search'
 class Home extends Component {
     render() {
         return (
