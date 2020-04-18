@@ -73,4 +73,22 @@ module.exports = (app) => {
 
         })
     })
+
+    app.get("/getProductsByName/:name", verify, async (req, res) => {
+        let { name } = req.params;
+
+        try {
+            let products = await Products.find({ name }) || [];
+
+            res.send({
+                results: {
+                    response: 'handeled response retreive all products by name',
+                    products
+                }
+            }).end()
+        }
+        catch (err) {
+            res.status(400).send(err).end();
+        }
+    })
 }
