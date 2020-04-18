@@ -13,6 +13,7 @@ import MyProducts from './components/seller/myProducts';
 import OpenedAccNav from './components/navbar/openedAccNav';
 import NotOpenedAccNav from './components/navbar/notOpenedAcc';
 import MakeProduct from './components/seller/makeNewProduct';
+import ByName from "./components/searchByName/byName"
 
 class App extends React.Component {
     constructor(props) {
@@ -57,6 +58,9 @@ class App extends React.Component {
                         </Route>
                         <Route exact path="/makeProduct">
                             {this.state.openedAcc ? <MakeProduct /> : <Redirect to="/" />}
+                        </Route>
+                        <Route exact path="/search">
+                            <ByName />
                         </Route>
                         <Route exact path="/">
                             <Home />
