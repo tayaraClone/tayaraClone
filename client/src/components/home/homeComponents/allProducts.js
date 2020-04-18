@@ -46,6 +46,7 @@ class AllProds extends Component {
             <div id="allProducts">
                 <div>
                     <ChooseCategorie onRemoveCategorie={this.removeCategory.bind(this)} />
+                    <hr></hr>
                     <Price onBudget={this.makeBudget.bind(this)} />
                 </div>
 
@@ -57,8 +58,8 @@ class AllProds extends Component {
                                     <div key={i} id={product._id} className="allProds" onClick={this.onclick.bind(this)}>
                                         <img src={product.image} className="allProdsImgs" alt="product image" ></img>
                                         <h3>{product.cost} DT</h3>
-                                        <p>Stock: {product.stockCondition} | Delivery: {product.deliveryCondition}</p>
                                         <h4>{product.name}</h4>
+                                        <p>Stock: {product.stockCondition} | Delivery: {product.deliveryCondition}</p>
                                     </div>
                                 )
                             }

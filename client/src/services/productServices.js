@@ -4,7 +4,7 @@ export default {
     makeProduct: async (data, onMake) => {
         // makeProduct sends data to the route so it can save it the db
         axios.post('http://localhost:5000/makeProduct', data, {
-            headers: { 'auth-token': localStorage.getItem('_______________JWT_Token') }
+            headers: { 'auth-token': localStorage.getItem('_______________JWT_Token') } // header to the http request
         })
             .then(res => {
                 onMake()
@@ -41,6 +41,15 @@ export default {
                 console.log(res)
             })
             .catch(err => console.log(err))
+    },
+    byNameProducts: async (name, onRetreive) => {
+        axios.get(`http://localhost:5000/getProductsByName/${name}`,
+            { headers: { 'auth-token': localStorage.getItem('_______________JWT_Token') } })
+            .then(res => {
+                let { products } = res.data.results;
+                onRetreive(products);
+            })
+            .catch(err => console.log(err));
     }
 
 }
