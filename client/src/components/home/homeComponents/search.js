@@ -25,8 +25,8 @@ class Search extends Component {
         return !this.state.madeSearch ? (
             <div>
                 <form>
-                    <input type="text" name="search" onChange={this.on_change}></input>
-                    <button onClick={this.on_click}></button>
+                    <input type="text" name="search" onChange={this.on_change.bind(this)}></input>
+                    <button onClick={this.on_click.bind(this)}>Search</button>
                 </form>
             </div>
         ) : <Redirect to="search" />
