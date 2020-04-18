@@ -28,12 +28,12 @@ class App extends React.Component {
   }
 
   logOut() {
-    localStorage.removeItem('_______________JWT_Token')
-    this.setState({ openedAcc: false });
+    localStorage.removeItem('_______________JWT_Token') // remove the token from the localStorage
+    this.setState({ openedAcc: false }); // set openedAcc state to false so it can logs out
   }
 
   componentWillMount() {
-    if (localStorage.getItem('_______________JWT_Token')) { this.setState({ openedAcc: true }) }
+    if (localStorage.getItem('_______________JWT_Token')) { this.setState({ openedAcc: true }) } // if the is a token it will set openedAcc to true 
   }
 
   render() {
