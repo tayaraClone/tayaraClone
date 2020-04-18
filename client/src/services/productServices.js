@@ -41,6 +41,15 @@ export default {
                 console.log(res)
             })
             .catch(err => console.log(err))
+    },
+    byNameProducts: async (name, onRetreive) => {
+        axios.get(`http://localhost:5000/getProductsByName/${name}`,
+            { headers: { 'auth-token': localStorage.getItem('_______________JWT_Token') } })
+            .then(res => {
+                let { products } = res.data.results;
+                onRetreive(products);
+            })
+            .catch(err => console.log(err));
     }
 
 }
