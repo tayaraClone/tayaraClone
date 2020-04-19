@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import productsServices from './../../services/productServices'
+import productsServices from './../../services/productServices';
+import Prod from './prod';
 
 class Product extends Component {
     constructor(props) {
@@ -24,7 +25,7 @@ class Product extends Component {
     render() {
         return (
             <div>
-                <img src={this.state.product.image} />
+                <Prod product={this.state.product} />
             </div>
         )
     }
