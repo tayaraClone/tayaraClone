@@ -96,10 +96,10 @@ module.exports = (app) => {
     app.get('/productProfile/:_id', async (req, res) => {
         let { _id } = req.params;
         try {
-            let product = await Products.findOne({ _id })
-            let account = await Accounts.findOne({ _id: product.account_id })
+            let product = await Products.findOne({ _id }) //rereive prduct by it's id
+            let account = await Accounts.findOne({ _id: product.account_id }) // retreive seller account by it's id
 
-            res.send({
+            res.send({ // send successful response 
                 results: {
                     response: 'handeled response to retreive product and it\'s seller account',
                     data: {
@@ -109,7 +109,7 @@ module.exports = (app) => {
                 }
             }).end();
         } catch (err) {
-            res.status(400).send(err).end();
+            res.status(400).send(err).end(); // send error if there is an error
         }
     })
 }
