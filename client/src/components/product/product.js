@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import productsServices from './../../services/productServices';
 import Prod from './prod';
-
+import Prod1 from './prod1';
+import Seller from './acc';
 class Product extends Component {
     constructor(props) {
         super(props);
@@ -26,6 +27,10 @@ class Product extends Component {
         return (
             <div>
                 <Prod product={this.state.product} />
+                <div>
+                    <Prod1 product={this.state.product} />
+                    <Seller seller={this.state.account} />
+                </div>
             </div>
         )
     }
