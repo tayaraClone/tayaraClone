@@ -75,22 +75,20 @@ module.exports = (app) => {
         })
     })
 
-    app.get("/getProductsByName/:name", verify, async (req, res) => {
+    app.get("/getProductsByName/:name", async (req, res) => {
         let { name } = req.params;
+        console.log(name)
+        let products = await Products.find({ name }) || []; // retreive all data with the name that we took it form request params
 
-        try {
-            let products = await Products.find({ name }) || []; // retreive all data with the name that we took it form request params
+        res.send({  // send successful response
+            results: {
+                response: 'handeled response retreive all products by name',
+                products
+            }
+        }).end()
 
-            res.send({  // send successful response
-                results: {
-                    response: 'handeled response retreive all products by name',
-                    products
-                }
-            }).end()
-        }
-        catch (err) {
-            res.status(400).send(err).end(); // send error if there is a problem
-        }
+        // res.status(400).send(err).end(); // send error if there is a problem
+
     })
 
     app.get('/productProfile/:_id', async (req, res) => {

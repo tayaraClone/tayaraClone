@@ -45,8 +45,7 @@ export default {
     },
     byNameProducts: async (name, onRetreive) => {
         // byNameProducts makes get http request and returns products by name 
-        axios.get(`http://localhost:5000/getProductsByName/${name}`,
-            { headers: { 'auth-token': localStorage.getItem('_______________JWT_Token') } })
+        axios.get(`http://localhost:5000/getProductsByName/${name}`)
             .then(res => {
                 let { products } = res.data.results;
                 onRetreive(products);
