@@ -25,9 +25,9 @@ class Product extends Component {
 
     render() {
         return (
-            <div>
+            <div id="productPage">
                 <Prod product={this.state.product} />
-                <div>
+                <div id="prodAndSeller">
                     <Prod1 product={this.state.product} />
                     <Seller seller={this.state.account} />
                 </div>

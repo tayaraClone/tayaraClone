@@ -86,14 +86,21 @@ li:hover {
   height: 200px;
 }
 
-.searchProd{
-  width : 350px;
+/* .searchProd{; */
+/* } */
+
+
+#productPage{
+  display: grid;
+  grid-template-columns: 630px 320px;
+  margin-left: 200px;
+
 }
 
-.searchProdsImgs{
-  width: 330px;
-}
 
-#prodImg{
-  width: 350px;
-}
+
+/* #prodCondition{
+
+} */
+
+
