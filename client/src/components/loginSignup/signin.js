@@ -20,7 +20,7 @@ class Signin extends Component {
         // emailValidator validates email
         if (this.state.password < 9 || emailValidator.test(this.state.email)) {
 
-            accServices.signIn(this.state, this.props.openAccount)
+            accServices.signIn(this.state, this.props.openAccount) // make signIn request
 
         }
     }
