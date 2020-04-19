@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import productsServices from './../../../services/productServices'
 import ChooseCategorie from './chooseByCategories';
-import Price from './price'
+import Price from './price';
+import { Redirect } from 'react-router-dom';
 
 class AllProds extends Component {
     constructor(props) {
@@ -16,7 +17,8 @@ class AllProds extends Component {
             "Other": true,
             allProds: [],
             min: 0,
-            max: 18000
+            max: 18000,
+            clickedOnProduct: false
         }
     }
 
@@ -35,6 +37,8 @@ class AllProds extends Component {
 
     onclick(e) {
         e.preventDefault()
+        sessionStorage.setItem('product_______________', e.target.id);
+        this.setState({ clickedOnProduct: true });
     }
 
     makeBudget(name, price) {
@@ -42,7 +46,7 @@ class AllProds extends Component {
     }
 
     render() {
-        return (
+        return !this.state.clickedOnProduct ? (
             <div id="allProducts">
                 <div>
                     <ChooseCategorie onRemoveCategorie={this.removeCategory.bind(this)} />
@@ -68,7 +72,7 @@ class AllProds extends Component {
 
                 </div>
             </div>
-        )
+        ) : (<Redirect to="/product" />)
     }
 }
 
