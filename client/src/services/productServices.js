@@ -43,6 +43,7 @@ export default {
             .catch(err => console.log(err))
     },
     byNameProducts: async (name, onRetreive) => {
+        // byNameProducts makes get http request and returns products by name 
         axios.get(`http://localhost:5000/getProductsByName/${name}`,
             { headers: { 'auth-token': localStorage.getItem('_______________JWT_Token') } })
             .then(res => {
@@ -52,7 +53,8 @@ export default {
             .catch(err => console.log(err));
     },
     productAndSeller: async (prodId, onRetreive) => {
-        axios.get('http://localhost:5000/productProfile/' + prodId)
+        // productAndSeller makes get http request and return a response with product and it's seller data
+        axios.get('http://localhost:5000/productProfile/' + prodId) // made get http request with product id as a param
             .then(res => {
                 let { data } = res.data.results;
                 onRetreive(data);
