@@ -13,14 +13,14 @@ class Product extends Component {
     }
 
     onRetreive(account, product) {
-        this.setState({ account, product });
-        console.log(account, product)
+        this.setState({ account, product }); // set state account and product with it's parameters values
+
     }
 
     componentWillMount() {
-        let prodId = sessionStorage.getItem('product_______________')
+        let prodId = sessionStorage.getItem('product_______________') // set prodId with product's id
 
-        productsServices.productAndSeller(prodId, this.onRetreive.bind(this));
+        productsServices.productAndSeller(prodId, this.onRetreive.bind(this)); // retreive data and set it in the state
     }
 
     render() {
