@@ -18,7 +18,7 @@ class Prod extends Component {
     render() {
         return (
             <div key={this.props.i} id={this.props.product['_id']} className="allProds" onClick={e => this.getId(e)}>
-                <img src={this.props.product.image} className={this.props.product._id + " allProdsImgs"} alt="product image" ></img>
+                <img src={this.props.product.image} style={{ width: "200px", height: "200px" }} className={this.props.product._id + " allProdsImgs"} alt="product image" ></img>
                 <h3 className={this.props.product._id}>{this.props.product.cost} DT</h3>
                 <h4 className={this.props.product._id}>{this.props.product.name}</h4>
                 <p className={this.props.product._id}>Stock: {this.props.product.stockCondition} | Delivery: {this.props.product.deliveryCondition}</p>

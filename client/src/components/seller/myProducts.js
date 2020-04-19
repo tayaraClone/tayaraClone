@@ -24,13 +24,21 @@ class MyProducts extends Component {
 
 
     render() {
+        let stockConditionStyle = {
+            marginRight: "70px"
+        }
+
+        let sellerProdImg = {
+            width: "200px",
+            height: "200px"
+        }
         return (
             <div id="myProds">
                 {
                     this.state.myProds.map((product, i) => (
                         <div className="sellerProd" key={i}>
-                            <img className="sellerProdImg" src={product.image} alt="product image"></img>
-                            <p className="stockCondition">Stock: {product.stockCondition} </p>
+                            <img className="sellerProdImg" style={sellerProdImg} src={product.image} alt="product image"></img>
+                            <p className="stockCondition" style={stockConditionStyle}>Stock: {product.stockCondition} </p>
                             <button id="finishedStock" name={product._id} onClick={this.finishedStock.bind(this)}>Finished Stock</button>
                             <h4>{product.name}</h4>
                         </div>

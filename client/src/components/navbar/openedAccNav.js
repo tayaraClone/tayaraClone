@@ -5,13 +5,22 @@ class OpenedAccNav extends Component {
         super(props);
     }
     render() {
+        let listStyle = {
+
+            display: "inline",
+            marginLeft: "10px"
+        }
+
+        let ulStyle = {
+            listStyleType: "none"
+        }
         return (
             <nav class="nav">
                 <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="myProducts">My Products</Link></li>
-                    <li><Link to="makeProduct">make Product</Link></li>
-                    <li onClick={this.props.logOut}>Log Out</li>
+                    <li style={listStyle}><Link to="/">Home</Link></li>
+                    <li style={listStyle}><Link to="myProducts">My Products</Link></li>
+                    <li style={listStyle}><Link to="makeProduct">make Product</Link></li>
+                    <li style={listStyle} onClick={this.props.logOut}>Log Out</li>
                 </ul>
             </nav>
         )
