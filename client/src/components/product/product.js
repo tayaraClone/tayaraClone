@@ -27,11 +27,11 @@ class Product extends Component {
         return (
             <div id="productPage">
                 <Prod product={this.state.product} />
-                <div id="prodAndSeller">
+                <div id="prodAndSeller" style={{ marginLeft: "30px" }}>
                     <Prod1 product={this.state.product} />
                     <Seller seller={this.state.account} />
                 </div>
-            </div>
+            </div >
         )
     }
 }
