@@ -14,6 +14,7 @@ import OpenedAccNav from './components/navbar/openedAccNav';
 import NotOpenedAccNav from './components/navbar/notOpenedAcc';
 import MakeProduct from './components/seller/makeNewProduct';
 import ByName from "./components/searchByName/byName"
+import Product from './components/product/product';
 
 class App extends React.Component {
     constructor(props) {
@@ -61,6 +62,9 @@ class App extends React.Component {
                         </Route>
                         <Route exact path="/search">
                             <ByName />
+                        </Route>
+                        <Route exact path="/product">
+                            <Product />
                         </Route>
                         <Route exact path="/">
                             <Home />

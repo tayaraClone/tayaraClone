@@ -35,9 +35,8 @@ class AllProds extends Component {
         productsServices.allProds(this.onRetrieve.bind(this)); // this will retreive all products and set it to allProds state
     }
 
-    onclick(e) {
-        e.preventDefault()
-        sessionStorage.setItem('product_______________', e.target.id);
+    onclick(prodId) {
+        sessionStorage.setItem('product_______________', prodId);
         this.setState({ clickedOnProduct: true });
     }
 

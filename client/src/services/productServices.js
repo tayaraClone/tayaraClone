@@ -27,6 +27,7 @@ export default {
         axios.get('http://localhost:5000/allProds')
             .then(res => {
                 let { products } = res.data.results;
+                // console.log(products)
                 onRetreive(products);
             })
             .catch(err => console.log(err));
@@ -57,7 +58,7 @@ export default {
         axios.get('http://localhost:5000/productProfile/' + prodId) // made get http request with product id as a param
             .then(res => {
                 let { data } = res.data.results;
-                onRetreive(data);
+                onRetreive(data.account, data.product);
             })
             .catch(err => console.log(err))
     }
