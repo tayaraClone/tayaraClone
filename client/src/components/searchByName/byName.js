@@ -27,12 +27,12 @@ class ByName extends Component {
         return (
             <div>
                 <Search />
-                <div id="searchProds">
+                <div id="searchProds" style={{ marginLeft: '480px', backgroundColor: "white", borderRadius: "3%", marginTop: "15px", width: "350px" }}>
                     {
                         this.state.products.map((product, i) => {
                             return (
-                                <div key={i} id={product._id} className="seachProd" onClick={this.onclick.bind(this)}>
-                                    <img src={product.image} className="searchProdsImgs" alt="product image" ></img>
+                                <div key={i} id={product._id} style={{ width: "350px" }} className="seachProd" onClick={this.onclick.bind(this)}>
+                                    <img src={product.image} style={{ width: "330px", marginTop: "10px" }} className="searchProdsImgs" alt="product image" ></img>
                                     <h3>{product.cost} DT</h3>
                                     <h4>{product.name}</h4>
                                     <p>Stock: {product.stockCondition} | Delivery: {product.deliveryCondition}</p>

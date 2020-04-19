@@ -3,7 +3,7 @@ import productsServices from './../../../services/productServices'
 import ChooseCategorie from './chooseByCategories';
 import Price from './price';
 import { Redirect } from 'react-router-dom';
-
+import Prod from './prod';
 class AllProds extends Component {
     constructor(props) {
         super(props);
@@ -13,8 +13,8 @@ class AllProds extends Component {
             "boy's fashion": true,
             "baby's essentials": true,
             "video games": true,
-            "Art": true,
-            "Other": true,
+            "art": true,
+            "other": true,
             allProds: [],
             min: 0,
             max: 18000,
@@ -35,9 +35,8 @@ class AllProds extends Component {
         productsServices.allProds(this.onRetrieve.bind(this)); // this will retreive all products and set it to allProds state
     }
 
-    onclick(e) {
-        e.preventDefault()
-        sessionStorage.setItem('product_______________', e.target.id);
+    onclick(prodId) {
+        sessionStorage.setItem('product_______________', prodId);
         this.setState({ clickedOnProduct: true });
     }
 
@@ -59,12 +58,7 @@ class AllProds extends Component {
                         this.state.allProds.map((product, i) => {
                             if (this.state[product.categorie] && product.cost > (this.state.min || 1) && product.cost < (this.state.max || 18000)) {
                                 return (
-                                    <div key={i} id={product._id} className="allProds" onClick={this.onclick.bind(this)}>
-                                        <img src={product.image} className="allProdsImgs" alt="product image" ></img>
-                                        <h3>{product.cost} DT</h3>
-                                        <h4>{product.name}</h4>
-                                        <p>Stock: {product.stockCondition} | Delivery: {product.deliveryCondition}</p>
-                                    </div>
+                                    <Prod i={i} product={product} onclick={this.onclick.bind(this)} />
                                 )
                             }
                         })
