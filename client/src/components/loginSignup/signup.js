@@ -49,7 +49,7 @@ class Signup extends Component {
 
             function success(pos) {
                 var crd = pos.coords;
-                place = {
+                place = { // set place to new object with geographic location
                     latitude: crd.latitude,
                     heightAccuracy: crd.accuracy,
                     longitude: crd.longitude
@@ -58,15 +58,15 @@ class Signup extends Component {
             }
 
             function error(err) {
-                console.warn(`ERROR(${err.code}): ${err.message}`);
+                console.warn(`ERROR(${err.code}): ${err.message}`); // send error if there is one
             }
 
-            navigator.geolocation.getCurrentPosition(success, error, options);
-            this.setState(place)
+            navigator.geolocation.getCurrentPosition(success, error, options); // retreive geographic location of client
+            this.setState(place) // give geographic location states values
             // add date to save it in the db
             let newAcc = this.state;
-            newAcc.createdAt = Date()
-            accountServices.signUp(newAcc, this.props.openAccount)
+            newAcc.createdAt = Date() // add creation date to the signup
+            accountServices.signUp(newAcc, this.props.openAccount) // make signup http request
         }
 
 
