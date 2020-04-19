@@ -51,7 +51,7 @@ class MakeProduct extends Component {
 
 
         } else {
-            productServices.makeProduct(this.state, this.onMadeProduct.bind(this)) // 
+            productServices.makeProduct(this.state, this.onMadeProduct.bind(this)) // add new product http request so it can save the state data in the db
         }
 
     }
