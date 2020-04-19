@@ -3,7 +3,7 @@ import productsServices from './../../../services/productServices'
 import ChooseCategorie from './chooseByCategories';
 import Price from './price';
 import { Redirect } from 'react-router-dom';
-
+import Prod from './prod';
 class AllProds extends Component {
     constructor(props) {
         super(props);
@@ -59,12 +59,7 @@ class AllProds extends Component {
                         this.state.allProds.map((product, i) => {
                             if (this.state[product.categorie] && product.cost > (this.state.min || 1) && product.cost < (this.state.max || 18000)) {
                                 return (
-                                    <div key={i} id={product._id} className="allProds" onClick={this.onclick.bind(this)}>
-                                        <img src={product.image} className="allProdsImgs" alt="product image" ></img>
-                                        <h3>{product.cost} DT</h3>
-                                        <h4>{product.name}</h4>
-                                        <p>Stock: {product.stockCondition} | Delivery: {product.deliveryCondition}</p>
-                                    </div>
+                                    <Prod i={i} product={product} onclick={this.onclick.bind(this)} />
                                 )
                             }
                         })
