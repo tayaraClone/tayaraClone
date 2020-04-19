@@ -3,7 +3,8 @@ let axios = require('axios');
 export default {
     makeProduct: async (data, onMake) => {
         // makeProduct sends data to the route so it can save it the db
-        axios.post('http://localhost:5000/makeProduct', data, {
+
+        axios.post('/makeProduct', data, {
             headers: { 'auth-token': localStorage.getItem('_______________JWT_Token') } // header to the http request
         })
             .then(res => {
@@ -14,7 +15,7 @@ export default {
     },
     sellerProds: async (onRetreive) => {
         // sellerProds is a function to retrieve a sepecific seller with the the id
-        axios.get(`http://localhost:5000/sellerProds`, { headers: { 'auth-token': localStorage.getItem('_______________JWT_Token') } })
+        axios.get(`/sellerProds`, { headers: { 'auth-token': localStorage.getItem('_______________JWT_Token') } })
             .then(res => {
 
                 let { products } = res.data.results;
@@ -24,7 +25,8 @@ export default {
     },
     allProds: async (onRetreive) => {
         // allProds takes onRetreive as a parameter and retreive all products data gives it to onRetreive as a parameter
-        axios.get('http://localhost:5000/allProds')
+
+        axios.get('/allProds')
             .then(res => {
                 let { products } = res.data.results;
                 // console.log(products)
@@ -34,7 +36,7 @@ export default {
     },
     finishedStock: async (id) => {
         // finishedStock takes id as a parameter and make a put request to update the product by it's id
-        axios.put(`http://localhost:5000/finishedStock/${id}`, {
+        axios.put(`/finishedStock/${id}`, {
             stockCondition: "finished"
         },
             { headers: { 'auth-token': localStorage.getItem('_______________JWT_Token') } })
@@ -45,7 +47,7 @@ export default {
     },
     byNameProducts: async (name, onRetreive) => {
         // byNameProducts makes get http request and returns products by name 
-        axios.get(`http://localhost:5000/getProductsByName/${name}`)
+        axios.get(`/getProductsByName/${name}`)
             .then(res => {
                 let { products } = res.data.results;
                 onRetreive(products);
@@ -54,7 +56,7 @@ export default {
     },
     productAndSeller: async (prodId, onRetreive) => {
         // productAndSeller makes get http request and return a response with product and it's seller data
-        axios.get('http://localhost:5000/productProfile/' + prodId) // made get http request with product id as a param
+        axios.get('/productProfile/' + prodId) // made get http request with product id as a param
             .then(res => {
                 let { data } = res.data.results;
                 onRetreive(data.account, data.product);
