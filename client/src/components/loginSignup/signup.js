@@ -81,7 +81,7 @@ class Signup extends Component {
                     <input id="upLastName" type="text" name="lastname" onChange={this.onchange}></input><br></br>
                     <label for="upEmail">Email:</label>
                     <input id="upEmail" type="email" name="email" onChange={this.onchange}></input><br></br>
-                    <label for="password"></label>
+                    <label for="password">Password:</label>
                     <input id="upPassword" name="password" type="password" onChange={this.onchange}></input><br></br>
                     <label for="phoneNumber">Phone Number:</label>
                     <input id="upPhone" type="number" name="phoneNumber" onChange={this.onchange}></input><br></br>
