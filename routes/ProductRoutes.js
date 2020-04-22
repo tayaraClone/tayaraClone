@@ -47,7 +47,7 @@ module.exports = (app) => {
         //         products
         //     }
         // }).end()
-        res.json(products); // send products as json data
+        res.json(products).end(); // send products as json data
 
     })
 
