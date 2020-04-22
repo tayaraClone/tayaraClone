@@ -18,10 +18,10 @@ export class AllProdsComponent implements OnInit {
   }
 
   getAllProds() {
-    this.prodsAPI.getAllProds()
+    this.prodsAPI.getAllProds() // retreive all products 
       .subscribe((res: any) => {
-        this.prodsData = res;
-      }, err => {
+        this.prodsData = res; // set this.prodsData to the retreuved data
+      }, err => { // console error if there is one
         console.log(err);
       })
 

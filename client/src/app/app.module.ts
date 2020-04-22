@@ -7,10 +7,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { AllProdsComponent } from './components/home/all-prods/all-prods.component'
 import { ClientProdsService } from './services/client-prods.service'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProdComponent } from './components/home/prod/prod.component';
 @NgModule({
   declarations: [
     AppComponent,
     AllProdsComponent,
+    ProdComponent,
   ],
   imports: [
     BrowserModule,
