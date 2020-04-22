@@ -10,7 +10,7 @@ export class ClientProdsService {
 
   constructor(private http: HttpClient) { }
 
-  private handleError<T>(operation = 'operation', result?: T) { // handle error i case ther is one
+  private handleError<T>(operation = 'operation', result?: T) { // handle error in case there is one
     return (error: any): Observable<T> => {
       console.log(error);
       return of(result as T);
@@ -18,7 +18,7 @@ export class ClientProdsService {
   }
 
   getAllProds(): Observable<Product[]> {
-    return this.http.get<Product[]>(`http://localhost:5000/allProds`) // retreive all products
+    return this.http.get<Product[]>(`http://localhost:5000/allProd`) // retreive all products
       .pipe(
         tap(products => console.log('prods =>', products)),
         catchError(this.handleError('AllProds', []))
