@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientProdsService } from '../../../services/client-prods.service';
 import { Product } from '../../../classes/product';
+import { HomeComponentsService } from './../../../services/home-components.service';
 
 @Component({
   selector: 'app-all-prods',
@@ -11,8 +12,9 @@ export class AllProdsComponent implements OnInit {
 
   prodsData: Product[] = [];
 
-  constructor(private prodsAPI: ClientProdsService) { }
+  constructor(private prodsAPI: ClientProdsService, private HCS: HomeComponentsService) { }
 
+  homeService: HomeComponentsService = this.HCS;
   ngOnInit(): void {
     this.getAllProds();
   }

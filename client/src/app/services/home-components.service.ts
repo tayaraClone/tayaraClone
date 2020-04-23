@@ -13,4 +13,12 @@ export class HomeComponentsService {
   min: number = 0;
   max: number = 9999999999;
   constructor() { }
+
+  toggle(categorie) {
+    this[categorie] = !this[categorie];
+  }
+
+  newBudget(name, value) {
+    this[name] = value;
+  }
 }

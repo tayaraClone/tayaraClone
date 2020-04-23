@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeComponentsService } from './../../../services/home-components.service';
 
 @Component({
   selector: 'app-categories',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private HCS: HomeComponentsService) { }
 
   ngOnInit(): void {
+  }
+  onClick(categorie) {
+    this.HCS.toggle(categorie)
   }
 
 }
