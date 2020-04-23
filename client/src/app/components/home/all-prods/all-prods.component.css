@@ -1,0 +1,10 @@
+#allProds{
+    display: grid;
+    grid-template-columns: 220px 220px 220px 220px;
+    grid-gap: 30px;
+
+}
+
+.prod{
+    margin-top: -10px;
+}

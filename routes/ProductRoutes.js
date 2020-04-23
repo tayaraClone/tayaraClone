@@ -40,19 +40,15 @@ module.exports = (app) => {
     })
 
     app.get('/allProds', async (req, res) => {
+        let products = await Products.find() || []; // if there is no product set up products value to empty array instead of null
+        // res.send({ // send successful response 
+        //     results: {
+        //         response: 'Handeled request to retreive all products',
+        //         products
+        //     }
+        // }).end()
+        res.json(products).end(); // send products as json data
 
-        try {
-            let products = await Products.find() || []; // if there is no product set up products value to empty array instead of null
-            res.send({ // send successful response 
-                results: {
-                    response: 'Handeled request to retreive all products',
-                    products
-                }
-            }).end()
-
-        } catch (err) {
-            res.status(401).send(err).end(); // send error if there is a problem
-        }
     })
 
     app.put('/finishedStock/:_id', verify, async (req, res) => {
