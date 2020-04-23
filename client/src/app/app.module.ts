@@ -8,11 +8,13 @@ import { AllProdsComponent } from './components/home/all-prods/all-prods.compone
 import { ClientProdsService } from './services/client-prods.service'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProdComponent } from './components/home/prod/prod.component';
+import { CategoriesComponent } from './components/home/categories/categories.component';
 @NgModule({
   declarations: [
     AppComponent,
     AllProdsComponent,
     ProdComponent,
+    CategoriesComponent,
   ],
   imports: [
     BrowserModule,
