@@ -9,12 +9,17 @@ import { ClientProdsService } from './services/client-prods.service'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProdComponent } from './components/home/prod/prod.component';
 import { CategoriesComponent } from './components/home/categories/categories.component';
+import { BudgetComponent } from './components/home/budget/budget.component';
+import { HomeComponent } from './components/home/home/home.component';
+import { HomeComponentsService } from './services/home-components.service';
 @NgModule({
   declarations: [
     AppComponent,
     AllProdsComponent,
     ProdComponent,
     CategoriesComponent,
+    BudgetComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,7 +28,10 @@ import { CategoriesComponent } from './components/home/categories/categories.com
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [ClientProdsService],
+  providers: [
+    ClientProdsService,
+    HomeComponentsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
