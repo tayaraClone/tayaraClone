@@ -17,6 +17,7 @@ import { NotOpenedAccNavComponent } from './components/navbar/not-opened-acc-nav
 import { SignInComponent } from './components/auth/sign-in/sign-in.component';
 import { OpenedAccNavComponent } from './components/navbar/opened-acc-nav/opened-acc-nav.component';
 import { NavbarComponent } from './components/navbar/navbar/navbar.component';
+import { SignUpComponent } from './components/auth/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { NavbarComponent } from './components/navbar/navbar/navbar.component';
     SignInComponent,
     OpenedAccNavComponent,
     NavbarComponent,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,
