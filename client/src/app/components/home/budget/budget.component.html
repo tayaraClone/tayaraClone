@@ -2,6 +2,6 @@
     <h4>Budget:</h4>
     <div>
 
-        <input type="number" min="1" name="min" placeholder="Min" />
+        <input type="number" min="1" name="min" placeholder="Min" (keyup)="onChange($event)" />
         <input type="number" min="1" name="max" placeholder="Max" />
     </div>

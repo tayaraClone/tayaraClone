@@ -12,6 +12,8 @@ import { CategoriesComponent } from './components/home/categories/categories.com
 import { BudgetComponent } from './components/home/budget/budget.component';
 import { HomeComponent } from './components/home/home/home.component';
 import { HomeComponentsService } from './services/home-components.service';
+import { AuthService } from './services/auth/auth.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,8 @@ import { HomeComponentsService } from './services/home-components.service';
   ],
   providers: [
     ClientProdsService,
-    HomeComponentsService
+    HomeComponentsService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
