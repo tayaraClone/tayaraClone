@@ -16,6 +16,7 @@ import { AuthService } from './services/auth/auth.service';
 import { NotOpenedAccNavComponent } from './components/navbar/not-opened-acc-nav/not-opened-acc-nav.component';
 import { SignInComponent } from './components/auth/sign-in/sign-in.component';
 import { OpenedAccNavComponent } from './components/navbar/opened-acc-nav/opened-acc-nav.component';
+import { NavbarComponent } from './components/navbar/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { OpenedAccNavComponent } from './components/navbar/opened-acc-nav/opened
     NotOpenedAccNavComponent,
     SignInComponent,
     OpenedAccNavComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
