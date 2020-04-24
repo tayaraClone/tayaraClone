@@ -13,6 +13,8 @@ import { BudgetComponent } from './components/home/budget/budget.component';
 import { HomeComponent } from './components/home/home/home.component';
 import { HomeComponentsService } from './services/home-components.service';
 import { AuthService } from './services/auth/auth.service';
+import { NotOpenedAccNavComponent } from './components/navbar/not-opened-acc-nav/not-opened-acc-nav.component';
+import { SignInComponent } from './components/auth/sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { AuthService } from './services/auth/auth.service';
     CategoriesComponent,
     BudgetComponent,
     HomeComponent,
+    NotOpenedAccNavComponent,
+    SignInComponent,
   ],
   imports: [
     BrowserModule,

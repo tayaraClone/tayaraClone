@@ -1,0 +1,19 @@
+nav{
+    margin-bottom: 35px;
+}
+
+ul{
+    
+    list-style-type: none;
+}
+
+li {
+    display: inline;
+    margin: 10px;
+
+}
+
+li a {
+    
+    text-decoration: none;
+}
