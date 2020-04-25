@@ -25,4 +25,8 @@ export class AuthService {
   myProdsRedirect() {
     this.router.navigate(['/myProducts'])
   }
+
+  logOut() {
+    localStorage.removeItem('______TO______KEN_______')
+  }
 }
