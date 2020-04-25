@@ -48,15 +48,10 @@ export class SignUpComponent implements OnInit {
       this.auth.signUp(creds)
 
     }
-    // let creds = {
-    //   firstname: this.firstname,
-    //   lastname: this.lastname,
-    //   email: this.email,
-    //   password: this.password,
-    //   phonenumber: this.phonenumber,
-    //   createdAt: Date()
-    // }
-    // console.log(creds)
+
+  }
+  navigate() {
+
   }
 
 }
