@@ -40,4 +40,10 @@ export class AuthService {
     localStorage.removeItem('______TO______KEN_______')
     this.router.navigate(['/'])
   }
+
+  routeGuard() {
+    if (!localStorage.getItem('______TO______KEN_______')) {
+      this.router.navigate(["/"]);
+    }
+  }
 }
