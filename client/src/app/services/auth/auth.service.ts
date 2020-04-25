@@ -42,7 +42,7 @@ export class AuthService {
   }
 
   routeGuard() {
-    if (!localStorage.getItem('______TO______KEN_______')) {
+    if (!this.openedAcc()) {
       this.router.navigate(["/"]);
     }
   }
