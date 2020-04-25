@@ -9,7 +9,7 @@ import { AuthService } from '../../../services/auth/auth.service';
 export class NavbarComponent implements OnInit {
 
   constructor(private AuthS: AuthService) { }
-  isOpened: boolean = this.AuthS.openedAcc;
+  auth: AuthService = this.AuthS;
   ngOnInit(): void {
   }
 
