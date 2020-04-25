@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-opened-acc-nav',
@@ -7,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OpenedAccNavComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authServ: AuthService) { }
 
+  authService: AuthService = this.authServ;
   ngOnInit(): void {
   }
 

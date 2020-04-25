@@ -28,5 +28,6 @@ export class AuthService {
 
   logOut() {
     localStorage.removeItem('______TO______KEN_______')
+    this.router.navigate(['/'])
   }
 }
