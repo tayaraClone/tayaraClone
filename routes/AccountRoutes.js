@@ -16,12 +16,7 @@ module.exports = (app) => {
                 await newAccount.save(); // saved collection
                 const token = jwt.sign({ _id: newAccount._id }, process.env.TOKEN_SECRET)
                 // token is a jwt token with a secret token from the .env file
-                res.send({
-                    results: {
-                        response: 'handeled sign up request',
-                        token
-                    }
-                }); // send response
+                res.json(token); // send response
                 res.end(); // end response
 
             } else {
