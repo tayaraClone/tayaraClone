@@ -20,6 +20,7 @@ import { NavbarComponent } from './components/navbar/navbar/navbar.component';
 import { SignUpComponent } from './components/auth/sign-up/sign-up.component';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 import { MyProdsComponent } from './components/my-prods/my-prods.component';
+import { MakeNewProdComponent } from './components/make-new-prod/make-new-prod.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { MyProdsComponent } from './components/my-prods/my-prods.component';
     SignUpComponent,
     NotFoundPageComponent,
     MyProdsComponent,
+    MakeNewProdComponent,
   ],
   imports: [
     BrowserModule,

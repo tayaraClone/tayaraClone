@@ -1,0 +1,24 @@
+<div>
+    <input type="text" [(ngModel)]="name" placeholder="Name" /><br><br>
+    <input type="text" name="description" placeholder="Description" /><br><br>
+    <input type="number" name="cost" min="1" placeholder="Price" /><br><br>
+    <input type="text" name="place" placeholder="Product place" /><br><br>
+    <label for="delivery">Delivery:</label>
+    <select>
+        <option disabled>Choose</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+    </select><br><br>
+    <label for="categorie">Categorie:</label>
+    <select>
+        <option disabled>Choose</option>
+        <option value="men's fashion">Men's Fashion</option>
+        <option value="women's fashion">Women's Fashion</option>
+        <option value="boy's fashion">boy's Fashion</option>
+        <option value="baby's essentials">Baby's essentials</option>
+        <option value="video games">Video games</option>
+        <option value="other">Other</option>
+    </select><br><br>
+
+    <button (click)="onSave()">Save</button>
+</div>
