@@ -22,6 +22,16 @@ export class AuthService {
       .catch((err: any) => console.log(err)); // console error if there is one
   }
 
+  signIn(creds) { // send http post request to the server with credentials data to check the the credentials is valid or not
+    return this.http.post('http://localhost:5000/signin', creds)
+      .toPromise() // make promise
+      .then((res: any) => { // run this function if the request went well
+        localStorage.setItem('______TO______KEN_______', res);
+        this.myProdsRedirect()
+      })
+      .catch((err: any) => console.log(err)); // console error if there is one
+  }
+
   myProdsRedirect() {
     this.router.navigate(['/myProducts'])
   }
