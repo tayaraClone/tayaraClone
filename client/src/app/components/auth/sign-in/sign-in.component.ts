@@ -15,11 +15,12 @@ export class SignInComponent implements OnInit {
   }
 
   onClick() {
-    let emailValidator = /@./;
+    let emailValidator = /@./; // validate email with regular expression
 
     if (!emailValidator.test(this.email) || this.password.length < 9) {
       if (!emailValidator.test(this.email)) alert('your email is not valid')
       if (this.password.length < 9) alert('you have to write 9 or more characters in your password')
+
     } else {
       let creds = {
         password: this.password,
