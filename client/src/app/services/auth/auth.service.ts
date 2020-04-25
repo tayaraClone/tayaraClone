@@ -6,7 +6,9 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-  openedAcc: boolean = false;
+  openedAcc() {
+    return !!localStorage.getItem('______TO______KEN_______');
+  }
   constructor(private http: HttpClient,
     private router: Router) { }
   signUp(credentials) {
@@ -15,14 +17,9 @@ export class AuthService {
       .toPromise() // make promise
       .then((res: any) => { // run this function if the request went well
         localStorage.setItem('______TO______KEN_______', res);
-        this.toggleOpendAcc();
         this.myProdsRedirect()
       })
       .catch((err: any) => console.log(err)); // console error if there is one
-  }
-
-  toggleOpendAcc() {
-    this.openedAcc = !this.openedAcc; // toggle the account opened
   }
 
   myProdsRedirect() {
