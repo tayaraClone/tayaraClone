@@ -1,17 +1,18 @@
 <div>
     <input type="text" [(ngModel)]="name" placeholder="Name" /><br><br>
-    <input type="text" name="description" placeholder="Description" /><br><br>
-    <input type="number" name="cost" min="1" placeholder="Price" /><br><br>
-    <input type="text" name="place" placeholder="Product place" /><br><br>
+    <input type="text" [(ngModel)]="image" placeholder="Image URL" /><br><br>
+    <input type="text" [(ngModel)]="description" placeholder="Description" /><br><br>
+    <input type="number" [(ngModel)]="cost" min="1" placeholder="Price" /><br><br>
+    <input type="text" [(ngModel)]="productPlace" placeholder="Product place" /><br><br>
     <label for="delivery">Delivery:</label>
-    <select>
-        <option disabled>Choose</option>
+    <select [(ngModel)]="deliveryCondition">
+        <option disabled selected>Choose</option>
         <option value="yes">Yes</option>
         <option value="no">No</option>
     </select><br><br>
     <label for="categorie">Categorie:</label>
-    <select>
-        <option disabled>Choose</option>
+    <select [(ngModel)]="categorie">
+        <option disabled selected>Choose</option>
         <option value="men's fashion">Men's Fashion</option>
         <option value="women's fashion">Women's Fashion</option>
         <option value="boy's fashion">boy's Fashion</option>
@@ -19,6 +20,11 @@
         <option value="video games">Video games</option>
         <option value="other">Other</option>
     </select><br><br>
+    <select [(ngModel)]="stockCondition">
+        <option disabled selected>Choose</option>
+        <option value="limited">Limited</option>
+        <option value="availabe">Available</option>
+    </select>
 
     <button (click)="onSave()">Save</button>
 </div>
