@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AllProdsComponent } from './components/home/all-prods/all-prods.component'
-import { ClientProdsService } from './services/client-prods.service'
+import { ProdsService } from './services/prods.service'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProdComponent } from './components/home/prod/prod.component';
 import { CategoriesComponent } from './components/home/categories/categories.component';
@@ -47,7 +47,7 @@ import { MakeNewProdComponent } from './components/make-new-prod/make-new-prod.c
     ReactiveFormsModule
   ],
   providers: [
-    ClientProdsService,
+    ProdsService,
     HomeComponentsService,
     AuthService
   ],
