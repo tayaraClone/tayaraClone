@@ -9,18 +9,16 @@ export class AuthService {
   constructor(private http: HttpClient) { }
   signUp(credentials) {
 
-    return this.http.post('http://localhost:5000/signup', credentials)
-      .toPromise()
-      .then((res: any) => {
-        console.log(res);
+    return this.http.post('http://localhost:5000/signup', credentials) // send http post request to the server with credentials data
+      .toPromise() // make promise
+      .then((res: any) => { // run this function if the request went well
         localStorage.setItem('______TO______KEN_______', res);
         this.toggleOpendAcc();
-        console.log(this.openedAcc);
       })
-      .catch((err: any) => console.log(err));
+      .catch((err: any) => console.log(err)); // console error if there is one
   }
 
   toggleOpendAcc() {
-    this.openedAcc = !this.openedAcc;
+    this.openedAcc = !this.openedAcc; // toggle the account opened
   }
 }
