@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
   openedAcc() {
-    return !!localStorage.getItem('______TO______KEN_______');
+    return !!localStorage.getItem('______TO______KEN_______'); // return true if there is a toke,
   }
   constructor(private http: HttpClient,
     private router: Router) { }
@@ -26,7 +26,7 @@ export class AuthService {
     this.router.navigate(['/myProducts'])
   }
 
-  logOut() {
+  logOut() { // remove toke and navigate to home page
     localStorage.removeItem('______TO______KEN_______')
     this.router.navigate(['/'])
   }
