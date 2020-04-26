@@ -1,0 +1,21 @@
+nav{
+    margin-bottom: 35px;
+    margin-left: 517px;
+}
+
+ul{
+    
+    list-style-type: none;
+}
+
+li {
+    display: inline;
+    margin: 10px;
+
+}
+
+li a {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: blueviolet;
+}

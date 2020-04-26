@@ -16,12 +16,7 @@ module.exports = (app) => {
                 await newAccount.save(); // saved collection
                 const token = jwt.sign({ _id: newAccount._id }, process.env.TOKEN_SECRET)
                 // token is a jwt token with a secret token from the .env file
-                res.send({
-                    results: {
-                        response: 'handeled sign up request',
-                        token
-                    }
-                }); // send response
+                res.json(token); // send response
                 res.end(); // end response
 
             } else {
@@ -51,12 +46,7 @@ module.exports = (app) => {
                 if (originalPass === password) {
                     const token = jwt.sign({ _id: acc._id }, process.env.TOKEN_SECRET)
                     // token is a jwt token with a secret token from the .env file
-                    res.send({
-                        results: {
-                            response: 'handled sign up request',
-                            token
-                        }
-                    }).end() // send id if the passwords request and the password from the db is the same 
+                    res.json(token).end() // send token if the passwords request and the password from the db is the same 
                 }
                 else {
                     res.status(400).send({

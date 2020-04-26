@@ -1,5 +1,5 @@
 # tayaraClone
-tayaraClone is a tayara.tn clone for m-amine-aouini green field project on RBK Tn
+tayaraClone is a tayaraClone's green field project refactor from MERN to MEAN stack in legacy project
 
 # setup for development
 
@@ -15,11 +15,11 @@ to setup this appliation run this commands one by one (make shure your in the ro
 
 4. npm run dev
 
-this wil run the application on a virtual dom
+this wil run the application on a localhost
 
 # setup for production
 
-to setup this application for production run this commands (make shure your in the root directory)
+to setup this application for production run this commands (make sure your in the root directory)
 
 0. cd client
 
