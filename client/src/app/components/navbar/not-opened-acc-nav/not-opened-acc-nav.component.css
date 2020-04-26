@@ -1,11 +1,15 @@
 nav{
     margin-bottom: 18px;
     margin-left: 517px;
+    width: 100%;
+    position: fixed;
+    background-color: cornsilk;
 }
 
 ul{
     
     list-style-type: none;
+    
 }
 
 li {
