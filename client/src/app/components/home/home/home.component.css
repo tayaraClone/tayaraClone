@@ -1,4 +1,17 @@
 #home{
     display: grid;
     grid-template-columns: 20% 80%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#choose{
+    height: 100%;
+    position: fixed;
+    background-color: azure;
+    width: 17%;
+
+}
+
+#allProds{
+    margin-left: 250px;
 }
