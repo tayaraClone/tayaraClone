@@ -17,10 +17,11 @@ export class MyProdsComponent implements OnInit {
     this.auth.routeGuard(); // if user not logged in navigate to landing page
   }
 
-  retreiveProds() {
+  retreiveProds() { // if every thing went well this.sellerPrds will be an array with all seller prods
     this.prodSevices.sellerProds().subscribe((res: any) => {
+
       this.sellerProds = res;
-    }, err => console.log(err));
+    }, err => console.log(err)); // if there is an error console it
   }
 
 }
