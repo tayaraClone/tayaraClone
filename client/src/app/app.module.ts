@@ -24,6 +24,7 @@ import { MakeNewProdComponent } from './components/make-new-prod/make-new-prod.c
 import { MyProdComponent } from './components/my-prods/my-prod/my-prod.component';
 import { SearchComponent } from './components/home/search/search.component';
 import { SearchPageComponent } from './components/searchPage/search-page/search-page.component';
+import { ProdProfileComponent } from './components/clickedProduct/prod-profile/prod-profile.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { SearchPageComponent } from './components/searchPage/search-page/search-
     MyProdComponent,
     SearchComponent,
     SearchPageComponent,
+    ProdProfileComponent,
   ],
   imports: [
     BrowserModule,

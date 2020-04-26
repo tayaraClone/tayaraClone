@@ -6,6 +6,7 @@ import { SignUpComponent } from './components/auth/sign-up/sign-up.component';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 import { MyProdsComponent } from './components/my-prods/my-prods.component';
 import { MakeNewProdComponent } from './components/make-new-prod/make-new-prod.component';
+import { ProdProfileComponent } from './components/clickedProduct/prod-profile/prod-profile.component';
 
 const routes: Routes = [ // my routes
   { path: '', component: HomeComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [ // my routes
   { path: 'signup', component: SignUpComponent },
   { path: 'makeProduct', component: MakeNewProdComponent },
   { path: 'myProducts', component: MyProdsComponent },
+  { path: 'product/:_id', component: ProdProfileComponent },
   { path: "**", component: NotFoundPageComponent }
 ];
 
