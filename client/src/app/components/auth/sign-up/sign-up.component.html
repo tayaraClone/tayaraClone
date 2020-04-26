@@ -1,13 +1,9 @@
 <div>
-    <label for='firstname'>First Name:</label>
-    <input name="firstname" type="text" [(ngModel)]="firstname" /><br>
-    <label for='lastname'>Last Name:</label>
-    <input name="lastname" type="text" [(ngModel)]="lastname" /><br>
-    <label for='email'>Email:</label>
-    <input name="email" type="email" [(ngModel)]="email" /><br>
-    <label for='password'>Password:</label>
-    <input name="password" type="password" [(ngModel)]="password" /><br>
-    <label for='phonenumber'>Phone Number:</label>
-    +216<input name="phonenumber" type="number" [(ngModel)]="phonenumber" /><br>
-    <button (click)="signUp()">Sign Up</button>
+    <input class="signup" name="firstname" type="text" [(ngModel)]="firstname" placeholder="First Name" /><br>
+    <input class="signup" name="lastname" type="text" [(ngModel)]="lastname" placeholder="Last Name" /><br>
+    <input class="signup" name="email" type="email" [(ngModel)]="email" placeholder="Email" /><br>
+    <input class="signup" name="password" type="password" [(ngModel)]="password" placeholder="Password" /><br>
+    <input class="signup" name="phonenumber" type="number" [(ngModel)]="phonenumber"
+        placeholder="Phone Number +216" /><br>
+    <button (click)="signUp()" class="signup">Sign Up</button>
 </div>
