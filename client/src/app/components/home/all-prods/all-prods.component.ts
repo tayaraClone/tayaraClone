@@ -23,7 +23,7 @@ export class AllProdsComponent implements OnInit {
     this.prodsAPI.getAllProds() // retreive all products 
       .subscribe((res: any) => {
         this.prodsData = res; // set this.prodsData to the retreived data
-        this.prodsData.reverse()
+        this.prodsData.reverse() // reverse array
       }, err => { // console error if there is one
         console.log(err);
       })

@@ -20,9 +20,8 @@ export class MyProdsComponent implements OnInit {
 
   retreiveProds() { // if every thing went well this.sellerProds will be an array with all seller prods
     this.prodSevices.sellerProds().subscribe((res: any) => {
-      console.log(res)
-      this.sellerProds = res;
-      this.sellerProds.reverse()
+      this.sellerProds = res.results.products;
+      this.sellerProds.reverse() // reverse array
     }, err => console.log(err)); // if there is an error console it
   }
 
