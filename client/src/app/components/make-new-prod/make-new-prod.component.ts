@@ -25,7 +25,7 @@ export class MakeNewProdComponent implements OnInit {
 
   }
   onSave() {
-    let urlValidator = /http:\/\//;
+    let urlValidator = /https:\/\//;
 
     if (this.name === "" || // check inputs
       !urlValidator.test(this.image) ||

@@ -20,11 +20,12 @@
         <option value="video games">Video games</option>
         <option value="other">Other</option>
     </select><br><br>
+    <label for="stock">Stock Condition:</label>
     <select [(ngModel)]="stockCondition">
         <option disabled selected>Choose</option>
         <option value="limited">Limited</option>
         <option value="availabe">Available</option>
-    </select>
+    </select><br><br>
 
     <button (click)="onSave()">Save</button>
 </div>
