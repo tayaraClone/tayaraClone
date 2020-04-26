@@ -1,5 +1,5 @@
 <div id="allProds">
     <div class="prod" *ngFor="let prod of prodsData">
-        <app-prod [product]="prod">{{prod.name}}</app-prod>
+        <app-prod [product]="prod" [categ]="prod.categorie" [cost]="prod.cost"></app-prod>
     </div>
 </div>

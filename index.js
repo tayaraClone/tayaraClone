@@ -15,8 +15,9 @@ mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost:27017/tayaraClo
     .catch(err => console.log(err))
 mongoose.set('useCreateIndex', true);
 
-app.use(cors())
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(cors());
 
 require('./models/Accounts');
 require('./models/Products');

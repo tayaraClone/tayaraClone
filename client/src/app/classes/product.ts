@@ -8,5 +8,6 @@ export class Product {
     stockCondition: string;
     deliveryCondition: string;
     productPlace: string;
+    categorie: string;
 
 }
