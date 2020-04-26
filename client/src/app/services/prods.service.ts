@@ -53,7 +53,7 @@ export class ProdsService {
   }
 
   finishedProducts(id, changeStock) {
-    this.http.put('http://localhost:5000/finishedStock/' + id, { stockCondition: 'limited' },
+    this.http.put('http://localhost:5000/finishedStock/' + id, { stockCondition: 'finished' },
       {
         headers: {
           'auth-token': localStorage.getItem('______TO______KEN_______')
