@@ -5,6 +5,7 @@
 }
 
 #choose{
+    margin: 42px -7px;
     height: 100%;
     position: fixed;
     background-color: azure;
