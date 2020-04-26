@@ -42,30 +42,30 @@ export class ProdsService {
   }
 
   sellerProds() {
-    return this.http.get<Product[]>('http://localhost:5000/sellerProds', {
+    return this.http.get<Product[]>('http://localhost:5000/sellerProds', { // retreive seller products 
       headers: {
-        'auth-token': localStorage.getItem("______TO______KEN_______")
+        'auth-token': localStorage.getItem("______TO______KEN_______") // set token header
       }
     })
       .pipe(
         tap(prods => { }),
-        catchError(this.handleError('Seller Prods Error', []))
+        catchError(this.handleError('Seller Prods Error', [])) // handle error in case there is one
       )
   }
 
-  finishedProducts(id) {
+  finishedProducts(id) { // make request to change product by id to finished stock
     this.http.put('http://localhost:5000/finishedStock/' + id, { stockCondition: 'finished' },
       {
         headers: {
-          'auth-token': localStorage.getItem('______TO______KEN_______')
+          'auth-token': localStorage.getItem('______TO______KEN_______') // set token ad a header
         }
       })
       .toPromise()
       .then((res: any) => { })
-      .catch((err: any) => console.log(err))
+      .catch((err: any) => console.log(err)) // console error if there is one
   }
 
-  getProd(id) {
+  getProd(id) { // retreive product profile (product and it's seller data)
     return this.http.get<SearchProd>('http://localhost:5000/productProfile/' + id)
       .pipe(tap(prodProfile => { }),
         catchError(this.handleError('Product Search Error', []))
