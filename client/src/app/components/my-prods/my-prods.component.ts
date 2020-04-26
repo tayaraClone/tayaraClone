@@ -25,4 +25,6 @@ export class MyProdsComponent implements OnInit {
     }, err => console.log(err)); // if there is an error console it
   }
 
+
+
 }

@@ -3,7 +3,7 @@
     <h4>{{product.cost}} DT</h4>
     <div class="prodsCondition">
         <p>stock: {{stock}}</p>
-        <button *ngIf="buttonCondition()">Finished Stock</button>
+        <button *ngIf="!buttonCondition()" (click)="onFinishedStock(product._id)">Finished Stock</button>
     </div>
 
 </div>
