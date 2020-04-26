@@ -40,5 +40,15 @@ export class ProdsService {
       .catch((error: any) => console.log(error)); // console error if there is one
   }
 
-
+  sellerProds() {
+    return this.http.get<Product[]>('http://localhost:5000/sellerProds', {
+      headers: {
+        'auth-token': localStorage.getItem("______TO______KEN_______")
+      }
+    })
+      .pipe(
+        tap(prods => { }),
+        catchError(this.handleError('Seller Prods Error', []))
+      )
+  }
 }

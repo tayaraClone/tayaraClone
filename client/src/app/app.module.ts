@@ -21,6 +21,7 @@ import { SignUpComponent } from './components/auth/sign-up/sign-up.component';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 import { MyProdsComponent } from './components/my-prods/my-prods.component';
 import { MakeNewProdComponent } from './components/make-new-prod/make-new-prod.component';
+import { MyProdComponent } from './components/my-prods/my-prod/my-prod.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { MakeNewProdComponent } from './components/make-new-prod/make-new-prod.c
     NotFoundPageComponent,
     MyProdsComponent,
     MakeNewProdComponent,
+    MyProdComponent,
   ],
   imports: [
     BrowserModule,
