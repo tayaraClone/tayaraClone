@@ -22,6 +22,7 @@ import { NotFoundPageComponent } from './components/not-found-page/not-found-pag
 import { MyProdsComponent } from './components/my-prods/my-prods.component';
 import { MakeNewProdComponent } from './components/make-new-prod/make-new-prod.component';
 import { MyProdComponent } from './components/my-prods/my-prod/my-prod.component';
+import { SearchComponent } from './components/home/search/search.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { MyProdComponent } from './components/my-prods/my-prod/my-prod.component
     MyProdsComponent,
     MakeNewProdComponent,
     MyProdComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,

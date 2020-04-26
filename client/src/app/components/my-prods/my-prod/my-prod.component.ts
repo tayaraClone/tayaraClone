@@ -12,15 +12,12 @@ export class MyProdComponent implements OnInit {
   @Input() stock: string;
   constructor(private productService: ProdsService) { }
   buttonCondition() { return this.stock === 'finished' };
+  test: string = this.stock;
   ngOnInit(): void {
   }
 
-  finishedStock() {
-    this.stock = 'finished';
-  }
-
   onFinishedStock(id) {
-    this.productService.finishedProducts(id, this.finishedStock)
+    this.productService.finishedProducts(id)
   }
 
 

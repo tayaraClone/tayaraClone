@@ -52,7 +52,7 @@ export class ProdsService {
       )
   }
 
-  finishedProducts(id, changeStock) {
+  finishedProducts(id, ) {
     this.http.put('http://localhost:5000/finishedStock/' + id, { stockCondition: 'finished' },
       {
         headers: {
@@ -60,7 +60,7 @@ export class ProdsService {
         }
       })
       .toPromise()
-      .then((res: any) => { changeStock() })
+      .then((res: any) => { })
       .catch((err: any) => console.log(err))
   }
 }
