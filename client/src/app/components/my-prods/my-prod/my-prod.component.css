@@ -8,11 +8,18 @@
 img{
     width: 280px;
     height: 280px;
+    margin-left: 5px;
 }
 
 .prodsCondition{
     display: grid;
     grid-template-columns: 150px 100px;
+}
+
+button{
+    border-style: none;
+    background-color: lightcoral;
+    color: white;
 }
 
 
