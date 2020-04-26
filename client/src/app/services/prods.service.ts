@@ -4,6 +4,7 @@ import { Observable, of } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
 import { Product } from '../classes/product';
 import { Router } from '@angular/router';
+import { SearchProd } from '../classes/search-prod';
 @Injectable({
   providedIn: 'root'
 })
@@ -65,6 +66,9 @@ export class ProdsService {
   }
 
   getProd(id) {
-    // return this.http.get
+    return this.http.get<SearchProd>('http://localhost:5000/productProfile/' + id)
+      .pipe(tap(prodProfile => { }),
+        catchError(this.handleError('Product Search Error', []))
+      )
   }
 }
