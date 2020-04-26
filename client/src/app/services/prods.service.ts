@@ -51,4 +51,16 @@ export class ProdsService {
         catchError(this.handleError('Seller Prods Error', []))
       )
   }
+
+  finishedProducts(id, changeStock) {
+    this.http.put('http://localhost:5000/finishedStock/' + id, { stockCondition: 'limited' },
+      {
+        headers: {
+          'auth-token': localStorage.getItem('______TO______KEN_______')
+        }
+      })
+      .toPromise()
+      .then((res: any) => { changeStock() })
+      .catch((err: any) => console.log(err))
+  }
 }
