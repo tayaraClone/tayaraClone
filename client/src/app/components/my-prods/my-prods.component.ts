@@ -15,12 +15,14 @@ export class MyProdsComponent implements OnInit {
 
   ngOnInit(): void {
     this.auth.routeGuard(); // if user not logged in navigate to landing page
+    this.retreiveProds()
   }
 
-  retreiveProds() { // if every thing went well this.sellerPrds will be an array with all seller prods
+  retreiveProds() { // if every thing went well this.sellerProds will be an array with all seller prods
     this.prodSevices.sellerProds().subscribe((res: any) => {
-
+      console.log(res)
       this.sellerProds = res;
+      this.sellerProds.reverse()
     }, err => console.log(err)); // if there is an error console it
   }
 

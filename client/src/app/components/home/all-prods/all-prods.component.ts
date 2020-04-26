@@ -22,7 +22,8 @@ export class AllProdsComponent implements OnInit {
   getAllProds() {
     this.prodsAPI.getAllProds() // retreive all products 
       .subscribe((res: any) => {
-        this.prodsData = res; // set this.prodsData to the retreuved data
+        this.prodsData = res; // set this.prodsData to the retreived data
+        this.prodsData.reverse()
       }, err => { // console error if there is one
         console.log(err);
       })
