@@ -47,7 +47,7 @@ export class ProdsService {
       }
     })
       .pipe(
-        tap(prods => { console.log(prods) }),
+        tap(prods => { }),
         catchError(this.handleError('Seller Prods Error', []))
       )
   }

@@ -8,9 +8,11 @@ import { Product } from 'src/app/classes/product';
 })
 export class MyProdComponent implements OnInit {
   @Input() product: Product;
+  @Input() stock: string;
   constructor() { }
-
+  buttonCondition() { return this.stock === 'limited' };
   ngOnInit(): void {
   }
+
 
 }
