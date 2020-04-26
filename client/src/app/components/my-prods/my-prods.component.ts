@@ -12,9 +12,7 @@ export class MyProdsComponent implements OnInit {
   constructor(private auth: AuthService, private router: Router) { }
 
   ngOnInit(): void {
-    if (!this.auth.openedAcc()) {
-      this.router.navigate(['/'])
-    }
+    this.auth.routeGuard();
   }
 
 }
