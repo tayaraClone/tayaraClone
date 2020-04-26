@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth/auth.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-my-prods',
@@ -9,10 +8,10 @@ import { Router } from '@angular/router';
 })
 export class MyProdsComponent implements OnInit {
 
-  constructor(private auth: AuthService, private router: Router) { }
+  constructor(private auth: AuthService) { }
 
   ngOnInit(): void {
-    this.auth.routeGuard();
+    this.auth.routeGuard(); // if user not logged in navigate to landing page
   }
 
 }

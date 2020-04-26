@@ -21,7 +21,7 @@ export class MakeNewProdComponent implements OnInit {
   constructor(private auth: AuthService, private prodService: ProdsService) { }
 
   ngOnInit(): void {
-    this.auth.routeGuard()
+    this.auth.routeGuard() // if user not logged in navigate to landing page
 
   }
   onSave() {
