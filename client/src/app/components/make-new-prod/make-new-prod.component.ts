@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { ProdsService } from 'src/app/services/prods.service';
 
 @Component({
   selector: 'app-make-new-prod',
@@ -17,7 +18,7 @@ export class MakeNewProdComponent implements OnInit {
   description: string = "";
 
 
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService, private prodService: ProdsService) { }
 
   ngOnInit(): void {
     this.auth.routeGuard()
@@ -26,7 +27,7 @@ export class MakeNewProdComponent implements OnInit {
   onSave() {
     let urlValidator = /http:\/\//;
 
-    if (this.name === "" ||
+    if (this.name === "" || // check inputs
       !urlValidator.test(this.image) ||
       this.description === "" ||
       this.categorie === "" ||
@@ -52,8 +53,10 @@ export class MakeNewProdComponent implements OnInit {
         stockCondition: this.stockCondition,
         deliveryCondition: this.deliveryCondition,
         cost: this.cost,
-        productPlace: this.productPlace
+        productPlace: this.productPlace,
+        createdAt: Date()
       }
+      this.prodService.newProduct(newProd) // make new product 
     }
   }
 

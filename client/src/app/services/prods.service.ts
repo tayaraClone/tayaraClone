@@ -27,17 +27,17 @@ export class ProdsService {
   }
 
   newProduct(newProd) {
-    return this.http.post('http://localhost:5000/makeProduct', newProd,
+    return this.http.post('http://localhost:5000/makeProduct', newProd, // make post request to make new Product
       {
         headers: {
-          'auth-token': localStorage.getItem("______TO______KEN_______")
+          'auth-token': localStorage.getItem("______TO______KEN_______") // add token as a header
         }
       })
       .toPromise()
       .then((res: any) => {
-        this.router.navigate(["/myProducts"]);
+        this.router.navigate(["/myProducts"]); // if every thing went well navigate to myProducts route
       })
-      .catch((error: any) => console.log(error));
+      .catch((error: any) => console.log(error)); // console error if there is one
   }
 
 
