@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { Product } from 'src/app/classes/product';
+import { ProdsService } from 'src/app/services/prods.service';
 
 @Component({
   selector: 'app-my-prods',
@@ -8,10 +10,17 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 })
 export class MyProdsComponent implements OnInit {
 
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService, private prodSevices: ProdsService) { }
+  sellerProds: Product[];
 
   ngOnInit(): void {
     this.auth.routeGuard(); // if user not logged in navigate to landing page
+  }
+
+  retreiveProds() {
+    this.prodSevices.sellerProds().subscribe((res: any) => {
+      this.sellerProds = res;
+    }, err => console.log(err));
   }
 
 }
