@@ -1,7 +1,13 @@
-div{
-    margin-top: 50px;
-    margin-left: 575px;
+#searchComp{
+    width: 100%;
+    background-color: darkseagreen;
+    margin-top: 43px;
     position: fixed;
+    padding: 10px;
+}
+
+#search{
+    margin-left: 575px;
 }
 
 input{
