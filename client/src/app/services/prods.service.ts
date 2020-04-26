@@ -65,7 +65,7 @@ export class ProdsService {
       .catch((err: any) => console.log(err)) // console error if there is one
   }
 
-  getProd(id) { // retreive product profile (product and it's seller data)
+  getProdProfile(id) { // retreive product profile (product and it's seller data)
     return this.http.get<SearchProd>('http://localhost:5000/productProfile/' + id)
       .pipe(tap(prodProfile => { }),
         catchError(this.handleError('Product Search Error', []))
