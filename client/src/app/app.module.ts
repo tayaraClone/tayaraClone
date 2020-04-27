@@ -28,6 +28,7 @@ import { ProdProfileComponent } from './components/clickedProduct/prod-profile/p
 import { Prod1Component } from './components/clickedProduct/prod1/prod1.component';
 import { Prod2Component } from './components/clickedProduct/prod2/prod2.component';
 import { SellerComponent } from './components/clickedProduct/seller/seller.component';
+import { ProductComponent } from './components/searchPage/product/product.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { SellerComponent } from './components/clickedProduct/seller/seller.compo
     Prod1Component,
     Prod2Component,
     SellerComponent,
+    ProductComponent,
   ],
   imports: [
     BrowserModule,

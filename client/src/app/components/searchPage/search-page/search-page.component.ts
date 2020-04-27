@@ -16,6 +16,7 @@ export class SearchPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.searchName = sessionStorage.getItem("____________search__name__________")
+    this.retreiveProds(this.searchName);
   }
 
   retreiveProds(name) {
@@ -24,6 +25,5 @@ export class SearchPageComponent implements OnInit {
       console.log(this.products);
     }, err => console.log(err))
   }
-
 
 }
