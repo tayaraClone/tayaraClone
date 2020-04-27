@@ -23,6 +23,19 @@ export class MyProdComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  changeName(e) {
+    let _id = e.target.name;
+    let name = prompt('Write a new name for your new name')
+    while (name === "") {
+      name = prompt('name is empty')
+    }
+    this.onUpdateName(_id, name);
+  }
+
+  onUpdateName(_id, name) {
+    this.productService.changeProdName(_id, name)
+  }
+
   onFinishedStock(id) {
     this.productService.finishedProducts(id)
   }
