@@ -104,4 +104,26 @@ module.exports = (app) => {
         }).end();
 
     })
+
+    app.put('/changeProdDescription/:_id', async (req, res) => {
+        let { _id } = req.params;
+        let { description } = req.body;
+
+        Products.findByIdAndUpdate({ _id }, { description }, async (err, result) => {
+
+            if (err) {
+                res.send(err).end()
+            }
+            else {
+                res.send({
+                    results: {
+                        response: 'handeld update request',
+                        result
+                    }
+                }).end()
+            }
+
+        })
+
+    })
 }
