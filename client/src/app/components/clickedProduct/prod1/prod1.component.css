@@ -1,0 +1,16 @@
+#prod1{
+    position: absolute;
+    margin-top: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 550px;
+    background-color: #fffcfc;
+}
+img{
+    width: 500px;
+    height: 500px;
+}
+
+#delivery{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}

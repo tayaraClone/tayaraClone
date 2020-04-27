@@ -3,6 +3,9 @@ nav{
     width: 100%;
     position: fixed;
     background-color: #fcf2ff;
+    border-style: none none solid none;
+    border-width: 1px;
+    border-color: darkmagenta;
 }
 
 ul{
