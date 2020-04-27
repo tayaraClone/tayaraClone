@@ -105,7 +105,7 @@ module.exports = (app) => {
 
     })
 
-    app.put('/changeProdDescription/:_id', async (req, res) => {
+    app.put('/changeProdDescription/:_id', verify, async (req, res) => {
         let { _id } = req.params;
         let { description } = req.body;
 
