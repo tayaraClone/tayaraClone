@@ -110,14 +110,14 @@ module.exports = (app) => {
         let { description } = req.body;
 
         Products.findByIdAndUpdate({ _id }, { description }, async (err, result) => {
-
+            // find product by id and update it's description
             if (err) {
-                res.send(err).end()
+                res.send(err).end() // send error if there is one
             }
             else {
-                res.send({
+                res.send({ // send successful result
                     results: {
-                        response: 'handeld update request',
+                        response: 'handeld update description request',
                         result
                     }
                 }).end()
