@@ -27,6 +27,7 @@ import { SearchPageComponent } from './components/searchPage/search-page/search-
 import { ProdProfileComponent } from './components/clickedProduct/prod-profile/prod-profile.component';
 import { Prod1Component } from './components/clickedProduct/prod1/prod1.component';
 import { Prod2Component } from './components/clickedProduct/prod2/prod2.component';
+import { SellerComponent } from './components/clickedProduct/seller/seller.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { Prod2Component } from './components/clickedProduct/prod2/prod2.componen
     ProdProfileComponent,
     Prod1Component,
     Prod2Component,
+    SellerComponent,
   ],
   imports: [
     BrowserModule,
