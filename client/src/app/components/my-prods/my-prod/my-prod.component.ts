@@ -12,7 +12,14 @@ export class MyProdComponent implements OnInit {
   @Input() stock: string;
   constructor(private productService: ProdsService) { }
   buttonCondition() { return this.stock === 'finished' };
-  test: string = this.stock;
+  changeDescription(e) {
+    let _id = e.target.name;
+    let description = prompt('Write a new description for your new description')
+    while (description === "") {
+      description = prompt('description is empty')
+    }
+    this.onUpdateDescription(_id, description);
+  }
   ngOnInit(): void {
   }
 
