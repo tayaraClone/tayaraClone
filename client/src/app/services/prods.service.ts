@@ -87,7 +87,7 @@ export class ProdsService {
       }
     })
       .toPromise()
-      .then((res: any) => { })
+      .then((res: any) => { alert('Descreption has been changed') })
       .catch((err: any) => console.log(err)) // console error in case there is one
   }
 }
