@@ -34,6 +34,11 @@ export class MyProdComponent implements OnInit {
 
   onUpdateName(_id, name) {
     this.productService.changeProdName(_id, name)
+    this.changeNameInTemplate(name)
+  }
+
+  changeNameInTemplate(name) {
+    this.product.name = name;
   }
 
   onFinishedStock(id) {

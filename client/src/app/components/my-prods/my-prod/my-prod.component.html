@@ -2,7 +2,7 @@
     <img src={{product.image}} alt="product image" />
     <div class="myProd">
         <h4 id="name">{{product.name}}</h4>
-        <button name={{product._id}}>Change Name</button>
+        <button name={{product._id}} (click)="changeName($event)">Change Name</button>
     </div>
     <br>
     <div class="myProd">
