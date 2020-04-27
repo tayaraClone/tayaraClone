@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProdsService } from 'src/app/services/prods.service';
 import { SearchProd } from 'src/app/classes/search-prod';
+import { Product } from 'src/app/classes/product';
+import { Seller } from 'src/app/classes/seller';
 
 @Component({
   selector: 'app-prod-profile',
@@ -8,7 +10,8 @@ import { SearchProd } from 'src/app/classes/search-prod';
   styleUrls: ['./prod-profile.component.css']
 })
 export class ProdProfileComponent implements OnInit {
-  prodProfile: SearchProd;
+  product: Product;
+  account: Seller;
   constructor(private prodService: ProdsService) { }
   _id: string;
   ngOnInit(): void {
@@ -19,8 +22,9 @@ export class ProdProfileComponent implements OnInit {
   retreiveProdProfile(_id) {
     this.prodService.getProdProfile(_id) // retreive prod profile (product and its seller data)
       .subscribe((res: any) => {
-        this.prodProfile = res.results.data; // set prodProfile to product and its seller data
-        console.log(this.prodProfile)
+        this.product = res.results.data.product; // set prodProfile to product data
+        this.account = res.results.data.account; // set account to seller data
+        console.log(this.product)
       }, err => console.log(err))
   }
 
