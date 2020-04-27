@@ -4,6 +4,7 @@
     width: 550px;
     background-color: #fffcfc;
     padding: 50px;
+    border-radius: 4px;
 }
 img{
     width: 500px;
@@ -13,6 +14,7 @@ img{
 
 #product{
     margin-left: 22px;
+    width: 500px;
 }
 
 #delivery{

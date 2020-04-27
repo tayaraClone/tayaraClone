@@ -26,6 +26,7 @@ import { SearchComponent } from './components/home/search/search.component';
 import { SearchPageComponent } from './components/searchPage/search-page/search-page.component';
 import { ProdProfileComponent } from './components/clickedProduct/prod-profile/prod-profile.component';
 import { Prod1Component } from './components/clickedProduct/prod1/prod1.component';
+import { Prod2Component } from './components/clickedProduct/prod2/prod2.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { Prod1Component } from './components/clickedProduct/prod1/prod1.componen
     SearchPageComponent,
     ProdProfileComponent,
     Prod1Component,
+    Prod2Component,
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,12 @@
-#prodProfile{
+#prodProfile1{
     position: absolute;
     margin-top: 40px;
+    display: grid;
+    grid-template-columns: 700px 350px;
+    grid-gap: 20px;
+}
+
+#prodProfile2{
+    
+    margin-top: 60px;
 }
