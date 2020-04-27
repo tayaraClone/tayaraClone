@@ -1,10 +1,11 @@
 <div class="myProds">
     <img src={{product.image}} alt="product image" />
-    <div>
+    <div class="myProd">
         <h4>{{product.cost}} DT</h4>
-        <button name={{product._id}} (click)="changeDescription($event)">Change Description</button>
+        <button id="changeDescription" name={{product._id}} (click)="changeDescription($event)">Change
+            Description</button>
     </div>
-    <div class="prodsCondition">
+    <div class="myProd">
         <p>stock: {{stock}}</p>
         <button *ngIf="!buttonCondition()" (click)="onFinishedStock(product._id)">Finished Stock</button>
     </div>
