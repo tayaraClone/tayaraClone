@@ -124,6 +124,28 @@ module.exports = (app) => {
             }
 
         })
-
     })
+
+    app.put('/changeProdName/:_id', verify, async (req, res) => {
+        let { _id } = req.params;
+        let { name } = req.body;
+
+        Products.findByIdAndUpdate({ _id }, { name }, async (err, result) => {
+            // find product by id and update it's name
+            if (err) {
+                res.send(err).end() // send error if there is one
+            }
+            else {
+                res.send({ // send successful result
+                    results: {
+                        response: 'handeld update product name request',
+                        result
+                    }
+                }).end()
+            }
+
+        })
+    })
+
+
 }
