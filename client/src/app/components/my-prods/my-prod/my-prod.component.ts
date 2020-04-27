@@ -24,30 +24,29 @@ export class MyProdComponent implements OnInit {
   }
 
   changeName(e) {
-    let _id = e.target.name;
-    let name = prompt('Write a new name for your new name')
+    let _id = e.target.name; // retreive id from target name
+    let name = prompt('Write a new name for your new name') // retreive new name
     while (name === "") {
-      name = prompt('name is empty')
+      name = prompt('name is empty') // if input is empty send another prompt
     }
     this.onUpdateName(_id, name);
   }
 
   onUpdateName(_id, name) {
-    this.productService.changeProdName(_id, name)
+    this.productService.changeProdName(_id, name) // make put request to change name in db
     this.changeNameInTemplate(name)
   }
 
-  changeNameInTemplate(name) {
+  changeNameInTemplate(name) { // change name in template
     this.product.name = name;
   }
 
   onFinishedStock(id) {
-    this.productService.finishedProducts(id)
+    this.productService.finishedProducts(id) // make put request to change stock condition to finished in db
   }
 
   onUpdateDescription(_id, description) {
-    this.productService.changeDescription(_id, description);
+    this.productService.changeDescription(_id, description); // make put http request to change product description
   }
-
 
 }
