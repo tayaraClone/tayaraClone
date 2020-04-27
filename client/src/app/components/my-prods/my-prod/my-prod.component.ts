@@ -43,6 +43,7 @@ export class MyProdComponent implements OnInit {
 
   onFinishedStock(id) {
     this.productService.finishedProducts(id) // make put request to change stock condition to finished in db
+    this.stock = "finished";
   }
 
   onUpdateDescription(_id, description) {
