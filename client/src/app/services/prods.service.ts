@@ -79,4 +79,15 @@ export class ProdsService {
         catchError(this.handleError('Get Products By Name Error', [])) // handle error
       )
   }
+
+  changeDescription(_id, description) {
+    return this.http.put('http://localhost:5000/changeProdDescription/' + _id, { description }, {
+      headers: {
+        'auth-token': localStorage.getItem('______TO______KEN_______')
+      }
+    })
+      .toPromise()
+      .then((res: any) => { })
+      .catch((err: any) => console.log(err))
+  }
 }
