@@ -1,3 +1,6 @@
 h1{
-    margin-left: 550px;
+    position: absolute;
+    margin-top: 60px;
+    margin-left: 530px;
+    font-family: Arial, Helvetica, sans-serif;
 }
