@@ -12,14 +12,14 @@ export class ProdProfileComponent implements OnInit {
   constructor(private prodService: ProdsService) { }
   _id: string;
   ngOnInit(): void {
-    this._id = window.location.pathname.split('/')[2];
+    this._id = window.location.pathname.split('/')[2]; // retreive id from path name
     this.retreiveProdProfile(this._id);
   }
 
   retreiveProdProfile(_id) {
-    this.prodService.getProdProfile(_id)
+    this.prodService.getProdProfile(_id) // retreive prod profile (product and its seller data)
       .subscribe((res: any) => {
-        this.prodProfile = res.data;
+        this.prodProfile = res.data; // set prodProfile to product and its seller data
       }, err => console.log(err))
   }
 
