@@ -20,4 +20,9 @@ img{
 #delivery{
     display: grid;
     grid-template-columns: 50% 50%;
+    color: rgb(136, 172, 202);
+}
+
+#description{
+    color: slategrey;
 }
