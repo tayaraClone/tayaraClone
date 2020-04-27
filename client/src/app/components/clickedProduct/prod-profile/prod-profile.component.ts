@@ -20,6 +20,7 @@ export class ProdProfileComponent implements OnInit {
     this.prodService.getProdProfile(_id) // retreive prod profile (product and its seller data)
       .subscribe((res: any) => {
         this.prodProfile = res.data; // set prodProfile to product and its seller data
+        console.log(this.prodProfile)
       }, err => console.log(err))
   }
 
