@@ -80,14 +80,14 @@ export class ProdsService {
       )
   }
 
-  changeDescription(_id, description) {
+  changeDescription(_id, description) { // make http request to update product description
     return this.http.put('http://localhost:5000/changeProdDescription/' + _id, { description }, {
       headers: {
-        'auth-token': localStorage.getItem('______TO______KEN_______')
+        'auth-token': localStorage.getItem('______TO______KEN_______') // add token as a header
       }
     })
       .toPromise()
       .then((res: any) => { })
-      .catch((err: any) => console.log(err))
+      .catch((err: any) => console.log(err)) // console error in case there is one
   }
 }
