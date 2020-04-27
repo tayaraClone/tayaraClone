@@ -24,7 +24,6 @@ export class ProdProfileComponent implements OnInit {
       .subscribe((res: any) => {
         this.product = res.results.data.product; // set prodProfile to product data
         this.account = res.results.data.account; // set account to seller data
-        console.log(this.product)
       }, err => console.log(err))
   }
 

@@ -7,6 +7,7 @@ import { NotFoundPageComponent } from './components/not-found-page/not-found-pag
 import { MyProdsComponent } from './components/my-prods/my-prods.component';
 import { MakeNewProdComponent } from './components/make-new-prod/make-new-prod.component';
 import { ProdProfileComponent } from './components/clickedProduct/prod-profile/prod-profile.component';
+import { SearchPageComponent } from './components/searchPage/search-page/search-page.component';
 
 const routes: Routes = [ // my routes
   { path: '', component: HomeComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [ // my routes
   { path: 'makeProduct', component: MakeNewProdComponent },
   { path: 'myProducts', component: MyProdsComponent },
   { path: 'product/:_id', component: ProdProfileComponent },
+  { path: 'search/product', component: SearchPageComponent },
   { path: "**", component: NotFoundPageComponent }
 ];
 
