@@ -20,5 +20,9 @@ export class MyProdComponent implements OnInit {
     this.productService.finishedProducts(id)
   }
 
+  onUpdateDescription(_id, description) {
+    this.productService.changeDescription(_id, description);
+  }
+
 
 }

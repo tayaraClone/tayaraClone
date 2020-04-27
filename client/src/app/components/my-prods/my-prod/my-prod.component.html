@@ -1,6 +1,9 @@
 <div class="myProds">
     <img src={{product.image}} alt="product image" />
-    <h4>{{product.cost}} DT</h4>
+    <div>
+        <h4>{{product.cost}} DT</h4>
+
+    </div>
     <div class="prodsCondition">
         <p>stock: {{stock}}</p>
         <button *ngIf="!buttonCondition()" (click)="onFinishedStock(product._id)">Finished Stock</button>
