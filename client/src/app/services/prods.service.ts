@@ -91,17 +91,17 @@ export class ProdsService {
       .catch((err: any) => console.log(err)) // console error in case there is one
   }
 
-  changeProdName(_id, name) {
-    return this.http.put('http://localhost:5000/changeProdName' + _id, { name }, {
+  changeProdName(_id, name) { // make put http request to change product name 
+    return this.http.put('http://localhost:5000/changeProdName/' + _id, { name }, {
       headers: {
-        'auth-token': localStorage.getItem('______TO______KEN_______')
+        'auth-token': localStorage.getItem('______TO______KEN_______') // add token as a header
       }
     })
       .toPromise()
       .then((res: any) => {
-        alert('Product name has been changed')
+        alert('Product name has been changed') // alert if every thing went well
       })
-      .catch((err: any) => console.log(err))
+      .catch((err: any) => console.log(err)) // console error in case there is one
   }
 
 }
