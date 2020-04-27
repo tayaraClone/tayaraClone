@@ -6,6 +6,7 @@ nav{
     border-style: none none solid none;
     border-width: 1px;
     border-color: darkmagenta;
+    z-index: 9999;
 }
 
 ul{
