@@ -71,4 +71,12 @@ export class ProdsService {
         catchError(this.handleError('Product Search Error', []))
       )
   }
+
+  getProdByName(name) {
+    return this.http.get<Product[]>(`http://localhost:5000/getProductsByName/${name}`)
+      .pipe(
+        tap(prods => { }),
+        catchError(this.handleError('Get Products By Name Error', []))
+      )
+  }
 }
