@@ -5,8 +5,12 @@ contains authentication services
 ## Usage
 
 ```typescript
-import { OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from './auth.service';
+
+@Component({
+    // ...
+})
 export class InstanceComponent implements OnInit {
     constructor(private auth: AuthService){ }
 
