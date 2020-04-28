@@ -20,7 +20,7 @@ export class ProdsService {
   }
 
   getAllProds(): Observable<Product[]> {
-    return this.http.get<Product[]>(`http://localhost:5000/allProds`) // retreive all products
+    return this.http.get<Product[]>(`/allProds`) // retreive all products
       .pipe(
         tap(products => { }),
         catchError(this.handleError('AllProds Error', []))
@@ -28,7 +28,7 @@ export class ProdsService {
   }
 
   newProduct(newProd) {
-    return this.http.post('http://localhost:5000/makeProduct', newProd, // make post request to make new Product
+    return this.http.post('/makeProduct', newProd, // make post request to make new Product
       {
         headers: {
           'auth-token': localStorage.getItem("______TO______KEN_______") // add token as a header
@@ -42,7 +42,7 @@ export class ProdsService {
   }
 
   sellerProds() {
-    return this.http.get<Product[]>('http://localhost:5000/sellerProds', { // retreive seller products 
+    return this.http.get<Product[]>('/sellerProds', { // retreive seller products 
       headers: {
         'auth-token': localStorage.getItem("______TO______KEN_______") // set token header
       }
@@ -54,7 +54,7 @@ export class ProdsService {
   }
 
   finishedProducts(id) { // make request to change product by id to finished stock
-    this.http.put('http://localhost:5000/finishedStock/' + id, { stockCondition: 'finished' },
+    this.http.put('/finishedStock/' + id, { stockCondition: 'finished' },
       {
         headers: {
           'auth-token': localStorage.getItem('______TO______KEN_______') // set token ad a header
@@ -66,14 +66,14 @@ export class ProdsService {
   }
 
   getProdProfile(id) { // retreive product profile (product and it's seller data)
-    return this.http.get<SearchProd>('http://localhost:5000/productProfile/' + id)
+    return this.http.get<SearchProd>('/productProfile/' + id)
       .pipe(tap(prodProfile => { }),
         catchError(this.handleError('Product Search Error', []))
       )
   }
 
   getProdByName(name) { // if everything went well this function will retreive an array of products
-    return this.http.get<Product[]>(`http://localhost:5000/getProductsByName/${name}`)
+    return this.http.get<Product[]>(`/getProductsByName/${name}`)
       .pipe(
         tap(prods => { }),
         catchError(this.handleError('Get Products By Name Error', [])) // handle error
@@ -81,7 +81,7 @@ export class ProdsService {
   }
 
   changeDescription(_id, description) { // make http request to update product description
-    return this.http.put('http://localhost:5000/changeProdDescription/' + _id, { description }, {
+    return this.http.put('/changeProdDescription/' + _id, { description }, {
       headers: {
         'auth-token': localStorage.getItem('______TO______KEN_______') // add token as a header
       }
@@ -92,7 +92,7 @@ export class ProdsService {
   }
 
   changeProdName(_id, name) { // make put http request to change product name 
-    return this.http.put('http://localhost:5000/changeProdName/' + _id, { name }, {
+    return this.http.put('/changeProdName/' + _id, { name }, {
       headers: {
         'auth-token': localStorage.getItem('______TO______KEN_______') // add token as a header
       }

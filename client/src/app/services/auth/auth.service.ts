@@ -13,7 +13,7 @@ export class AuthService {
     private router: Router) { }
   signUp(credentials) {
 
-    return this.http.post('http://localhost:5000/signup', credentials) // send http post request to the server with credentials data
+    return this.http.post('/signup', credentials) // send http post request to the server with credentials data
       .toPromise() // make promise
       .then((res: any) => { // run this function if the request went well
         localStorage.setItem('______TO______KEN_______', res);
@@ -23,7 +23,7 @@ export class AuthService {
   }
 
   signIn(creds) { // send http post request to the server with credentials data to check the the credentials is valid or not
-    return this.http.post('http://localhost:5000/signin', creds)
+    return this.http.post('/signin', creds)
       .toPromise() // make promise
       .then((res: any) => { // run this function if the request went well
         localStorage.setItem('______TO______KEN_______', res);
