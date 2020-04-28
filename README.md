@@ -35,3 +35,11 @@ npm run build
 ```
 
 this will prepair the application for production
+
+# Author
+
+M. Amine Aouini is a student in RBK Tunisia
+
+[GitHub](https://github.com/m-amine-aouini/)
+
+[Twitter](https://twitter.com/amine_m_aouini)
