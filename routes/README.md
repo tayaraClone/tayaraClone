@@ -20,6 +20,7 @@ let app = express();
 let verify = require('./verifyToken');
 
 app.get("/anyPath", verify, async(req, res)=>{
+    let { _id } = req.user // retreive user id that is logged in the browser
     // write what you need
 })
 ```
