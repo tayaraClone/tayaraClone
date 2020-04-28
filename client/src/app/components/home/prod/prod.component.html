@@ -1,7 +1,7 @@
 <div *ngIf="(homeService[categ] && greaterThan(homeService.max, cost) && greaterThan(cost, homeService.min))"
     class="products">
-    <img class="productsImg" src={{product.image}} alt="product image" />
-    <h4>{{product.name}}</h4>
-    <p>{{product.cost}}</p>
-    <p>delivery: {{product.deliveryCondition}} | stock: {{product.stockCondition}}</p>
+    <img class="productsImg" src={{product.image}} alt="product image" (click)="prodProfile()" />
+    <h4 (click)="prodProfile()">{{product.name}}</h4>
+    <p (click)="prodProfile()">{{product.cost}}</p>
+    <p (click)="prodProfile()">delivery: {{product.deliveryCondition}} | stock: {{product.stockCondition}}</p>
 </div>

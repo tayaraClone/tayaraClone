@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Product } from '../../../classes/product';
 import { HomeComponentsService } from "../../../services/home-components.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-prod',
@@ -12,7 +13,7 @@ export class ProdComponent implements OnInit {
   @Input() categ: string;
   @Input() cost: number;
 
-  constructor(private HCS: HomeComponentsService) { }
+  constructor(private HCS: HomeComponentsService, private router: Router) { }
   homeService: HomeComponentsService = this.HCS;
   cat: boolean = this.homeService[this.categ];
   ngOnInit(): void {
@@ -21,5 +22,8 @@ export class ProdComponent implements OnInit {
     return great > small
   }
 
+  prodProfile() {
+    this.router.navigate(['/product/' + this.product._id])
+  }
 
 }
