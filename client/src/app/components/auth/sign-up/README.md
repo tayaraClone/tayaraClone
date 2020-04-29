@@ -11,3 +11,7 @@ contains component style
 ## sign-up.component.ts
 
 contains component template functionality and data
+
+## sign-up.component.spec.ts
+
+to test component
