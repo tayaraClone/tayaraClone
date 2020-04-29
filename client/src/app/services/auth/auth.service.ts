@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
   openedAcc() {
-    return !!localStorage.getItem('______TO______KEN_______'); // return true if there is a toke,
+    return !!localStorage.getItem('______TO______KEN_______'); // return true if there is a token
   }
   constructor(private http: HttpClient,
     private router: Router) { }
