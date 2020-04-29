@@ -18,3 +18,4 @@ to test component
 
 # Screen Shot
 
+![alt text](./sign-in.component.screenshot.PNG)
