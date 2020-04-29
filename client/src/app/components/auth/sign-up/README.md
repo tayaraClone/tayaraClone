@@ -15,3 +15,7 @@ contains component template functionality and data
 ## sign-up.component.spec.ts
 
 to test component
+
+# Screen Shot
+
+![alt text](./sign-up.component.screenshot.PNG)

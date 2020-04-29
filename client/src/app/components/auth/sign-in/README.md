@@ -16,3 +16,5 @@ contains component template functionality and data
 
 to test component
 
+# Screen Shot
+
