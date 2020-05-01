@@ -1,7 +1,25 @@
-div{
+#openAcc{
     margin-left: 560px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute ;
+}
+
+#signIn{
+    margin-top: 60px;
+}
+
+.signin{
+    margin-top: 8px;
+    padding: 9px;
+    border-radius: 4px;
+    border-style: none;
 }
 
 a{
     margin-left: 70px;
+    padding: 5px;
+}
+
+a:hover{
+    background-color: cornflowerblue;
 }

@@ -1,0 +1,28 @@
+#prod1{
+    margin-top: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 550px;
+    background-color: #fffcfc;
+    padding: 50px;
+    border-radius: 4px;
+}
+img{
+    width: 500px;
+    height: 500px;
+    margin-left: 22px;
+}
+
+#product{
+    margin-left: 22px;
+    width: 500px;
+}
+
+#delivery{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    color: rgb(136, 172, 202);
+}
+
+#description{
+    color: slategrey;
+}

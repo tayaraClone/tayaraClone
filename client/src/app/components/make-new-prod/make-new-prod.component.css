@@ -1,5 +1,7 @@
 div{
     margin-left: 580px;
+    margin-top: 60px;
+    position: absolute;
 }
 
 input{

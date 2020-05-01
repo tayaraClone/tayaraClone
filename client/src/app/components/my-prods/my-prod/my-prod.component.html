@@ -1,7 +1,17 @@
 <div class="myProds">
     <img src={{product.image}} alt="product image" />
-    <h4>{{product.cost}} DT</h4>
-    <div class="prodsCondition">
+    <div class="myProd">
+        <h4 id="name">{{product.name}}</h4>
+        <button name={{product._id}} (click)="changeName($event)">Change Name</button>
+    </div>
+    <br>
+    <div class="myProd">
+        <h4>{{product.cost}} DT</h4>
+        <button id="changeDescription" name={{product._id}} (click)="changeDescription($event)">Change
+            Description</button>
+    </div>
+    <br>
+    <div class="myProd">
         <p>stock: {{stock}}</p>
         <button *ngIf="!buttonCondition()" (click)="onFinishedStock(product._id)">Finished Stock</button>
     </div>

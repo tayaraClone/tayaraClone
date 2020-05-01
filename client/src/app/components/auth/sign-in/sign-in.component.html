@@ -1,8 +1,8 @@
-<div>
-    <label for='email'>Email:</label>
-    <input name="email" type="email" [(ngModel)]="email" /><br>
-    <label for='password'>Password:</label>
-    <input name="password" type="password" [(ngModel)]="password" /><br>
-    <button (click)="onClick()">Sign In</button><br>
-    <a routerLink="/signup">Register</a>
+<div id="openAcc">
+    <div id="signIn">
+        <input name="email" type="email" [(ngModel)]="email" placeholder="Email" class="signin" /><br>
+        <input name="password" type="password" [(ngModel)]="password" placeholder="Password" class="signin" /><br>
+        <button (click)="onClick()" class="signin">Sign In</button><br>
+        <a routerLink="/signup">Register</a>
+    </div>
 </div>

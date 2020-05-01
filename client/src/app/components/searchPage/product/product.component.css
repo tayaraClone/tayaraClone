@@ -1,0 +1,14 @@
+.product{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: whitesmoke;
+    padding: 66px;
+}
+
+img{
+    width: 400px;
+}
+
+.prodData{
+    display: grid;
+    grid-template-columns: 120px 280px;
+}
